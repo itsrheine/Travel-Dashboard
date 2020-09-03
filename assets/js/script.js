@@ -15,11 +15,11 @@ localStorage.getItem();
 
 
 
-// dashboard - Weather 5-Day forecast
+// dashboard - Weather 5-Day forecast - search by city
 var cityWeather = function(value) {
 
     // format api url
-    var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q="+value+"&appid=386eafe2ba649945a853251bb7d3f25e";
+    var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q="+value+"&units=imperial&appid=386eafe2ba649945a853251bb7d3f25e";
 
     // make a request to the url
     fetch(apiUrl).then(function(response) {
@@ -42,8 +42,8 @@ var cityWeather = function(value) {
                 dateEl.innerHTML = date;
 
                 var temperatureValue = data.list[i].main.temp;
-                var temperatureFarhenheit = Math.round(((temperatureValue - 273.15)*1.8)+32) + "°F";
-                tempEl.innerHTML = temperatureFarhenheit;
+                var fixTemp = temperatureValue.toFixed(1);
+                tempEl.innerHTML = fixTemp + "&deg; F";
 
                 var descriptionValue = data.list[i].weather.description;
                 descEl.innerHTML = descriptionValue;
@@ -57,6 +57,12 @@ var cityWeather = function(value) {
     })
 }
 
+// api key a9kdLi-v4txmsrRgTFeTgvVop5k6ldC0K1quPvEG7qqeKZSbsuXE0Ta6CdmOkY1gsbfOg6tGNlj8_0fkj2BKjteccbnYUXkrP59niNbGJUv5YpU7TyngFlTEgwRPX3Yx
+// dashboard - Yelp Food - search by city
+var cityFood = function (value) {
+
+
+}
 
 // when search button is clicked
 var formSubmitHandler = function(event) {
