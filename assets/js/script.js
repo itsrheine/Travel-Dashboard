@@ -59,23 +59,36 @@ console.log(data);
 
 // api key a9kdLi-v4txmsrRgTFeTgvVop5k6ldC0K1quPvEG7qqeKZSbsuXE0Ta6CdmOkY1gsbfOg6tGNlj8_0fkj2BKjteccbnYUXkrP59niNbGJUv5YpU7TyngFlTEgwRPX3Yx
 // dashboard - Yelp Food - search by city
-var cityFood = function (city) {
-fetch("https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972").then(function(){
-    console.log(city);
-})
+var cityFood = function () {
+    fetch("https://grubhub.p.rapidapi.com/restaurants/nearby/34.0328448/-117.32582400000001?page=1", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "grubhub.p.rapidapi.com",
+            "x-rapidapi-key": "c605fbc41fmsh87994d2495b5f94p1f1112jsn5dc0f2f83aa5"
+        }
+    })
+    .then(response => {
+        response.json().then(data=>{
+            console.log(data);
+        })
+        
+    })
+    .catch(err => {
+        console.log(err);
+    });
 
 }
 
 // when search button is clicked
-var formSubmitHandler = function(event) {
-    event.preventDefault();
+// var formSubmitHandler = function(event) {
+//     event.preventDefault();
 
-    var cityInput = inputValue.value.trim();
-    if (cityInput) {
+//     var cityInput = inputValue.value.trim();
+//     if (cityInput) {
         
-        localStorage.setItem("", JSON.stringify(citySearched));
-    }
-    cityWeather(cityInput);
-}
+//         localStorage.setItem("", JSON.stringify(citySearched));
+//     }
+//     cityWeather(cityInput);
+// }
 
-// searchButton.addEventListener("click", formSubmitHandler);
+ searchButton.addEventListener("click", cityFood);
