@@ -1,17 +1,35 @@
 
 
 var searchButton = document.querySelector(".searchButton");
-var inputValue = docuent.querySelector(".inputValue");
+var inputValue = document.querySelector(".inputValue");
+
+// modal variables
+var modal = document.getElementById("myModal");
+var searchButton2 = document.querySelector("#searchButton2");
+var span = document.getElementsByClassName("close")[0];
 
 // storage array
-var citySearched = [];
+// var citySearched = [];
 
-// local storage
+// // local storage
+// localStorage.setItem();
+// localStorage.getItem();
 
 
-localStorage.setItem();
-localStorage.getItem();
+// second search modal
+searchButton2.onclick = function () {
+    modal.style.display = "block";
+}
 
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 
 
@@ -37,9 +55,9 @@ var cityWeather = function(value) {
                 var descEl = document.querySelector("#desc" + i);
                 var iconEl = document.querySelector("#icon" + i);
 
-                // equation variables
-                var date = moment().add.(i, 'days').format('l');
-                dateEl.innerHTML = date;
+                // // equation variables
+                // var date = moment().add.(i, 'days').format('l');
+                // dateEl.innerHTML = date;
 
                 var temperatureValue = data.list[i].main.temp;
                 var fixTemp = temperatureValue.toFixed(1);
@@ -68,6 +86,7 @@ var cityFood = function (value) {
 var formSubmitHandler = function(event) {
     event.preventDefault();
 
+    
     var cityInput = inputValue.value.trim();
     if (cityInput) {
         
@@ -76,4 +95,7 @@ var formSubmitHandler = function(event) {
     cityWeather(cityInput);
 }
 
+
+
 searchButton.addEventListener("click", formSubmitHandler);
+
