@@ -85,4 +85,25 @@ var formSubmitHandler = function(event) {
     cityWeather(cityInput);
 }
 
+// var hotel = function () {
+//     var hotelUrl = "https://tripadvisor1.p.rapidapi.com/hotels/list?offset=0&currency=USD&limit=30&order=asc&lang=en_US&sort=recommended&location_id=293919&adults=1&checkin=%3Crequired%3E&rooms=1&nights=2" +hot;
+//     var hotelKey = "4eaf773c0amsh0b742fc7b334189p10d7fcjsna881f6edc5c1";
+// }
+
+
+fetch("https://tripadvisor1.p.rapidapi.com/hotels/list?offset=0&currency=USD&limit=30&order=asc&lang=en_US&sort=recommended&location_id=293919&adults=1&checkin=%3Crequired%3E&rooms=1&nights=2", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
+		"x-rapidapi-key": "4eaf773c0amsh0b742fc7b334189p10d7fcjsna881f6edc5c1"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.log(err);
+});
+
+
 searchButton.addEventListener("click", formSubmitHandler);
