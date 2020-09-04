@@ -85,25 +85,48 @@ var formSubmitHandler = function(event) {
     cityWeather(cityInput);
 }
 
-// var hotel = function () {
-//     var hotelUrl = "https://tripadvisor1.p.rapidapi.com/hotels/list?offset=0&currency=USD&limit=30&order=asc&lang=en_US&sort=recommended&location_id=293919&adults=1&checkin=%3Crequired%3E&rooms=1&nights=2" +hot;
-//     var hotelKey = "4eaf773c0amsh0b742fc7b334189p10d7fcjsna881f6edc5c1";
-// }
+var cityWeather = function(value) {
 
+    // format api url
+    var hotelInput = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?radius=1500&type=hotel&keyword=hotel&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc";
+    var locationKey = "location=-33.8670522,151.1957362";
+    var hotelUrl = hotelInput + locationKey;
 
-fetch("https://tripadvisor1.p.rapidapi.com/hotels/list?offset=0&currency=USD&limit=30&order=asc&lang=en_US&sort=recommended&location_id=293919&adults=1&checkin=%3Crequired%3E&rooms=1&nights=2", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
-		"x-rapidapi-key": "4eaf773c0amsh0b742fc7b334189p10d7fcjsna881f6edc5c1"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.log(err);
-});
+    // make a request to the url
+    fetch(hotelUrl).then(function(response) {
+
+        // request was successful
+        if (response.ok) {
+            response.json().then(function(data) {
+
+            // loop from day one to day 6
+            for (var i = 1; i <6; i++) {
+
+                // query selector variables
+                var dateEl = document.querySelector("#day" + i);
+                var tempEl = document.querySelector("#temp" + i);
+                var descEl = document.querySelector("#desc" + i);
+                var iconEl = document.querySelector("#icon" + i);
+
+                // equation variables
+                var date = moment().add.(i, 'days').format('l');
+                dateEl.innerHTML = date;
+
+                var temperatureValue = data.list[i].main.temp;
+                var fixTemp = temperatureValue.toFixed(1);
+                tempEl.innerHTML = fixTemp + "&deg; F";
+
+                var descriptionValue = data.list[i].weather.description;
+                descEl.innerHTML = descriptionValue;
+
+                var iconVal = data.list[i].weather[0].icon;
+                iconEl.setAttribute("src", "https://openweathermap.org/img/w/" + iconVal + ".png");
+
+            }
+            })
+        }
+    })
+}
 
 
 searchButton.addEventListener("click", formSubmitHandler);
