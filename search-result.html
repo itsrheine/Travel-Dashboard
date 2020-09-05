@@ -16,9 +16,16 @@
 </head>
 
 <body>
+  <div class="topblock">
+    <div class="topmidblock"></div>
+  </div>
 
-  <!-- Trigger/Open The Search Modal -->
-  <button id="searchButton2">Search</button>
+  <div class="city-name">
+    <h2 id="cityName"></h2>
+    <div class="midblock"></div>    
+    <button id="searchButton2">Search</button>
+    <img src="./assets/images/Travel.svg" class="logoSmall"/>
+  </div>
 
   <!-- The Modal -->
   <div id="myModal" class="modal">
@@ -28,34 +35,60 @@
         <div class="front-page-container">
           <img src="./assets/images/Travel.svg" class="logo"/>
           <input class="search-bar" type="text" placeholder=" Enter destination city ">
-          <button type="button" class="searchButton">Search</button>
+          <button type="button" class="searchButton"><a href="./search-result.html">Search</a></button>
         </div>    
       </div>
     </div>
   </div>
+      
+  <div class="imageblock">
+    <div class="cityImage"></div>
+  </div>
 
-    <header class="city-name">
-        <h2>city</h2>
-        <img src="" alt="">icon
-        <h2>travel</h2>
-      </header>
-      <span class="date">
-      </span>
-      <section>
-        <div class="container-weather">
-          weather
-        </div>
-      </section>
-      <section>
-        <div class="food">
-          food
-        </div>
-      </section>
-      <section>
-        <div class="hotel">
-          hotel
-        </div>
-      </section>
+  <!-- City Weather -->
+  <div class="container">
+    <h3 id="weatherTitle">
+      <span class="cityName">San Francisco Weather...</span>
+      <!-- Note add to js var cityName function cityName + " " + "Weather" -->
+    </h3>
+    <div class="row" id="weather">
+      <div class="col col1">Column 1</div>
+      <div class="col col2">Column 2</div>
+      <div class="col col3">Column 3</div>
+      <div class="col col4">Column 4</div>
+      <div class="col col5">Column 5</div>
+    </div>
+  </div>
+
+  <!-- City Eats -->
+  <div class="container">
+    <h3 id="eatsTitle">
+      <span class="cityName">San Francisco Eats...</span>
+      <!-- Note add to js var cityName function cityName + " " + "Weather" -->
+    </h3>
+    <div class="row" id="eats">
+      <div class="col col1">Column 1</div>
+      <div class="col col2">Column 2</div>
+      <div class="col col3">Column 3</div>
+      <div class="col col4">Column 4</div>
+      <div class="col col5">Column 5</div>
+    </div>
+  </div>
+
+  <!-- City Stays -->
+  <div class="container">
+    <h3 id="staysTitle">
+      <span class="cityName">San Francisco Stays...</span>
+      <!-- Note add to js var cityName function cityName + " " + "Weather" -->
+    </h3>
+    <div class="row" id="stays">
+      <div class="col col1">Column 1</div>
+      <div class="col col2">Column 2</div>
+      <div class="col col3">Column 3</div>
+      <div class="col col4">Column 4</div>
+      <div class="col col5">Column 5</div>
+    </div>
+  </div>
      
   <script src="./assets/js/script.js"></script>
 </body>
