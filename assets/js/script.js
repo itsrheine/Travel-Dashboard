@@ -88,12 +88,12 @@
 
 var hotelSearch = function() {
     var corsInput = "https://cors-anywhere.herokuapp.com/" //Fixes "cors" error.
-    var hotelUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=hotel&keyword=hotel&radius=1500&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc";
+    var hotelApi = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=hotel&keyword=hotel&radius=1500&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc";
     var coord = "&location=" + "-33.8670522" + "," + "151.1957362";
-    var testUrl = corsInput + hotelUrl + coord;
+    var hotelUrl = corsInput + hotelApi + coord;
     
     
-    fetch(testUrl).then(function(response) {
+    fetch(hotelUrl).then(function(response) {
     return response.json();
     })
         .then(function(response) { 
@@ -105,12 +105,13 @@ var hotelSearch = function() {
             });
             // console.log(responseList)
            
-     
+            /* CYCLE THROUGH ARRAY FROM (counts down from 20 to 15) */
             for (var i = responseList.length - 1; i >= 15; i--) {
                 // LINKS VARIABLES TO DOCUMENT ELEMENTS //
                 var hotelNameEl = document.getElementById("hotel-name" + i);
                 var hotelAddressEl = document.getElementById("hotel-address" + i);
                 var hotelRatingEl = document.getElementById("hotel-rating" + i);
+                var hotelMapEl = document.getElementById("hotel-map" + i);
             
 
                 var hotelName = responseList[i].name;
@@ -122,8 +123,12 @@ var hotelSearch = function() {
                 var hotelRating = responseList[i].rating;
                 hotelRatingEl.innerHTML = hotelRating + "&#9733" + " rating";
 
-                // iconEl.setAttribute("src", "https://" + iconVal + ".png");
-                // console.log(responseList[i].vicinity);
+                // var str = responseList[i].photos[0].html_attributions;
+                // var res = str.split();
+                
+                // var hotelMap = res
+                // hotelMapEl.innerHTML = hotelMap
+                // console.log(res);
             };
             
             
