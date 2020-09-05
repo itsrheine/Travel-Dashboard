@@ -88,46 +88,44 @@
 
 var hotelSearch = function() {
     // var hotelCoord = "location=" + long + "," + lat;
-    var hotelInput = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=hotel&keyword=hotel&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc";
+    var hotelInput = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=hotel&keyword=hotel&radius=1500&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc&location=-33.8670522,151.1957362";
     var corsInput = "https://cors-anywhere.herokuapp.com/" //Fixes "cors" error.
-    var mapApi = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
-    var hotelKey = "&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc";
-
-    var hotelUrl = corsInput + hotelInput
+    var hotelUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=hotel&keyword=hotel&radius=1500&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc";
+    var coord = "&location=" + "-33.8670522" + "," + "151.1957362";
+    var testUrl = corsInput + hotelUrl + coord;
     
     
-    fetch(hotelUrl).then(function(response) {
+    fetch(testUrl).then(function(response) {
     return response.json();
     })
         .then(function(response) { 
             
             /* SORTING RESPONSE BY RATING */
             var responseList = response.results.sort(function(a, b) {
-                var hotelArray = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;
-                return hotelArray;
+                var hotelList = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;
+                return hotelList;
             });
             console.log(responseList)
            
      
-            for (var i = responseList.length - 1; i >= 0; i--) {
+            for (var i = responseList.length - 1; i >= 15; i--) {
                 // LINKS VARIABLES TO DOCUMENT ELEMENTS //
                 var hotelNameEl = document.querySelector("#hotel-name" + i);
                 var hotelAddressEl = document.querySelector("#hotel-address" + i);
                 var hotelRatingEl = document.querySelector("#hotel-rating" + i);
-                // var iconEl = document.querySelector("#icon" + i);
+            
 
-                var hotelName = responseList.results[i].name;
+                var hotelName = responseList[i].name;
                 hotelNameEl.innerText = hotelName;
 
-                var hotelAddress = responseList.results[i].vicinity;
+                var hotelAddress = responseList[i].vicinity;
                 hotelAddressEl.innerText = hotelAddress;
 
-                var hotelRating = responseList.results[i].rating;
+                var hotelRating = responseList[i].rating;
                 hotelRatingEl.innerText = hotelRating;
 
-                var iconVal = data.list[i].weather[0].icon;
-                iconEl.setAttribute("src", "https://openweathermap.org/img/w/" + iconVal + ".png");
-                
+                // iconEl.setAttribute("src", "https://openweathermap.org/img/w/" + iconVal + ".png");
+                console.log(responseList[i].vicinity);
             };
             
             
