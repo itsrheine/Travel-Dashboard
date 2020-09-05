@@ -110,24 +110,25 @@ var hotelSearch = function() {
      
             for (var i = responseList.length - 1; i >= 15; i--) {
                 // LINKS VARIABLES TO DOCUMENT ELEMENTS //
-                var hotelNameEl = document.querySelector("#hotel-name" + i);
-                var hotelAddressEl = document.querySelector("#hotel-address" + i);
-                var hotelRatingEl = document.querySelector("#hotel-rating" + i);
+                
+                var hotelNameEl = document.getElementById("hotel-name" + i);
+                var hotelAddressEl = document.getElementById("hotel-address" + i);
+                var hotelRatingEl = document.getElementById("hotel-rating" + i);
             
 
                 var hotelName = responseList[i].name;
+                console.log(hotelName)
                 hotelNameEl.innerText = hotelName;
 
                 var hotelAddress = responseList[i].vicinity;
                 hotelAddressEl.innerText = hotelAddress;
 
                 var hotelRating = responseList[i].rating;
-                hotelRatingEl.innerText = hotelRating;
+                hotelRatingEl.innerHTML = hotelRating + "&#9733" + " rating";
 
-                // iconEl.setAttribute("src", "https://openweathermap.org/img/w/" + iconVal + ".png");
-                console.log(responseList[i].vicinity);
+                // iconEl.setAttribute("src", "https://" + iconVal + ".png");
+                // console.log(responseList[i].vicinity);
             };
-            
             
             
             
