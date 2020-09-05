@@ -9,6 +9,7 @@
     A modal where I can input a different city to search for will pop up and you can do the process over again.
 */
 
+
 // var searchButton = document.querySelector(".searchButton");
 // var inputValue = docuent.querySelector(".inputValue");
 
@@ -99,43 +100,42 @@ var hotelSearch = function() {
     return response.json();
     })
         .then(function(response) { 
-            // console.log(response.results)
-            // var responseList = response.results;
-
+            
             /* SORTING RESPONSE BY RATING */
             var responseList = response.results.sort(function(a, b) {
-                return (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;
+                var hotelArray = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;
+                return hotelArray;
             });
             console.log(responseList)
            
-
      
-            // for (var i = 0; i < response.length; i++) {
-            //     // LINKS VARIABLES TO DOCUMENT ELEMENTS //
-            //     var hotelNameEl = document.querySelector("#hotel-name" + i);
-            //     var hotelAddressEl = document.querySelector("#hotel-address" + i);
-            //     var hotelRatingEl = document.querySelector("#hotel-rating" + i);
-            //     var iconEl = document.querySelector("#icon" + i);
+            for (var i = responseList.length - 1; i >= 0; i--) {
+                // LINKS VARIABLES TO DOCUMENT ELEMENTS //
+                var hotelNameEl = document.querySelector("#hotel-name" + i);
+                var hotelAddressEl = document.querySelector("#hotel-address" + i);
+                var hotelRatingEl = document.querySelector("#hotel-rating" + i);
+                // var iconEl = document.querySelector("#icon" + i);
 
-            //     var hotelName = response.results[i].name;
-            //     hotelNameEl.innerText = hotelName;
+                var hotelName = responseList.results[i].name;
+                hotelNameEl.innerText = hotelName;
 
-            //     var hotelAddress = response.results[i].vicinity;
-            //     hotelAddressEl.innerText = hotelAddress;
+                var hotelAddress = responseList.results[i].vicinity;
+                hotelAddressEl.innerText = hotelAddress;
 
-            //     var hotelRating = response.results[i].rating;
-            //     hotelRatingEl.innerText = hotelRating;
+                var hotelRating = responseList.results[i].rating;
+                hotelRatingEl.innerText = hotelRating;
 
-            //     // var iconVal = data.list[i].weather[0].icon;
-            //     // iconEl.setAttribute("src", "https://openweathermap.org/img/w/" + iconVal + ".png");
+                var iconVal = data.list[i].weather[0].icon;
+                iconEl.setAttribute("src", "https://openweathermap.org/img/w/" + iconVal + ".png");
                 
-            // };
+            };
+            
+            
             
             
         });
-        
-
 
 };
+        
 hotelSearch();
 // searchButton.addEventListener("click", formSubmitHandler);
