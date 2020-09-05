@@ -87,8 +87,6 @@
 // }
 
 var hotelSearch = function() {
-    // var hotelCoord = "location=" + long + "," + lat;
-    var hotelInput = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=hotel&keyword=hotel&radius=1500&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc&location=-33.8670522,151.1957362";
     var corsInput = "https://cors-anywhere.herokuapp.com/" //Fixes "cors" error.
     var hotelUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=hotel&keyword=hotel&radius=1500&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc";
     var coord = "&location=" + "-33.8670522" + "," + "151.1957362";
@@ -105,19 +103,17 @@ var hotelSearch = function() {
                 var hotelList = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;
                 return hotelList;
             });
-            console.log(responseList)
+            // console.log(responseList)
            
      
             for (var i = responseList.length - 1; i >= 15; i--) {
                 // LINKS VARIABLES TO DOCUMENT ELEMENTS //
-                
                 var hotelNameEl = document.getElementById("hotel-name" + i);
                 var hotelAddressEl = document.getElementById("hotel-address" + i);
                 var hotelRatingEl = document.getElementById("hotel-rating" + i);
             
 
                 var hotelName = responseList[i].name;
-                console.log(hotelName)
                 hotelNameEl.innerText = hotelName;
 
                 var hotelAddress = responseList[i].vicinity;
