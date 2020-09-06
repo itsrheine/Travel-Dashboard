@@ -123,12 +123,19 @@ var hotelSearch = function() {
                 var hotelRating = responseList[i].rating;
                 hotelRatingEl.innerHTML = hotelRating + "&#9733" + " rating";
 
-                // var str = responseList[i].photos[0].html_attributions;
-                // var res = str.split();
+                var hotelStr = responseList[i].photos[0].html_attributions[0];
+                // console.log("Checking str looks like String: \n", str); //checks is str is a string
+                var hotelRes = hotelStr.split('"');
                 
-                // var hotelMap = res
-                // hotelMapEl.innerHTML = hotelMap
-                // console.log(res);
+                var hotelMap = hotelRes
+                hotelMapEl.innerText = hotelName;
+                hotelMapEl.setAttribute("href", hotelMap[1]);
+                // hotelMap[1]
+                // console.log(hotelMap)
+                
+                
+                // console.log(responseList[i].photos[0].html_attributions);
+               
             };
             
             
