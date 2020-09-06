@@ -1,7 +1,7 @@
 ![alt text][logo]
 [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
 # Travel Dashboard
-Plan your trips with ease and peace of mind. Select a city to travel to and have an overview of how the city's weather forecast in the next 5-days will look like. See the top rated places to eat and stay. Be a travel expert with this travel dashboard. 
+Plan your trips with ease and peace of mind. Search a city to travel to and have an overview of how the city's weather forecast in the next 5-days will look like. See the top rated places to eat and stay. Be a travel expert with this travel dashboard. 
 
 ## Functionality
 1. After typing in my city and searching
