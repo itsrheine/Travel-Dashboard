@@ -16,15 +16,24 @@
 </head>
 
 <body>
+  <!-- Top Design -->
   <div class="topblock">
     <div class="topmidblock"></div>
   </div>
 
-  <div class="city-name">
-    <h2 id="cityName"></h2>
-    <div class="midblock"></div>    
-    <button id="searchButton2">Search</button>
-    <img src="./assets/images/Travel.svg" class="logoSmall"/>
+  <div class="row heading">
+    <div class="col col1">
+      
+    </div>
+    <div class="col col2">
+      
+    </div>
+    <div class="col col3">
+      <button id="searchButton2">Search</button>
+    </div>
+    <div class="col col4">
+      <img src="./assets/images/Travel.svg" id="logoSmall"/>
+    </div>
   </div>
 
   <!-- The Modal -->
@@ -41,54 +50,61 @@
     </div>
   </div>
       
-  <div class="imageblock">
-    <div class="cityImage"></div>
-  </div>
+  <!-- City Image -->
+  <div class="cityImage card"></div>
 
   <!-- City Weather -->
-  <div class="container">
-    <h3 id="weatherTitle">
-      <span class="cityName">San Francisco Weather...</span>
-      <!-- Note add to js var cityName function cityName + " " + "Weather" -->
-    </h3>
-    <div class="row" id="weather">
-      <div class="col col1">Column 1</div>
-      <div class="col col2">Column 2</div>
-      <div class="col col3">Column 3</div>
-      <div class="col col4">Column 4</div>
-      <div class="col col5">Column 5</div>
+    <div class="container bg-white">
+      <div class="row">
+        <h3 id="weatherTitle" class="cityName">San Francisco Weather...
+        </h3>
+      </div>
+      <div class="row">
+        <div class="card text-white bg-dark mb-3 col col1" style="max-width: 18rem;">
+          <div id="day1" class="card-header text-warning"></div>
+          <div class="card-body">
+            <p><img id="Icon1"></span></p>
+            Temp: <p id="temp1" class="card-text text-white-50"></p>
+            Humidity: <p id="hum1" class="card-text"></p>
+          </div>
+        </div>
+        <div class="card text-white bg-dark mb-3 col col2" style="max-width: 18rem;">
+          <div id="day2" class="card-header text-warning"></div>
+          <div class="card-body">
+            <p><img id="Icon2"></span></p>
+            Temp: <p id="temp2" class="card-text text-white-50"></p>
+            Humidity: <p id="hum2" class="card-text"></p>
+          </div>
+        </div>
+        <div class="card text-white bg-dark mb-3 col col3" style="max-width: 18rem;">
+          <div id="day3" class="card-header text-warning"></div>
+          <div class="card-body">
+            <p><img id="Icon3"></span></p>
+            Temp: <p id="temp3" class="card-text text-white-50"></p>
+            Humidity: <p id="hum3" class="card-text"></p>
+          </div>
+        </div>
+        <div class="card text-white bg-dark mb-3 col col4" style="max-width: 18rem;">
+          <div id="day4" class="card-header extt-warning"></div>
+          <div class="card-body">
+            <p><img id="Icon4"></span></p>
+            Temp: <p id="temp4" class="card-text text-white-50"></p>
+            Humidity: <p id="hum4" class="card-text"></p>
+          </div>
+        </div>
+        <div class="card text-white bg-dark mb-3 col col5" style="max-width: 18rem;">
+          <div id="day5" class="card-header text-warning"></div>
+          <div class="card-body">
+            <p><img id="Icon5"></span></p>
+            Temp: <p id="temp5" class="card-text text-white-50"></p>
+            Humidity: <p id="hum5" class="card-text text-white"></p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- City Eats -->
-  <div class="container">
-    <h3 id="eatsTitle">
-      <span class="cityName">San Francisco Eats...</span>
-      <!-- Note add to js var cityName function cityName + " " + "Weather" -->
-    </h3>
-    <div class="row" id="eats">
-      <div class="col col1">Column 1</div>
-      <div class="col col2">Column 2</div>
-      <div class="col col3">Column 3</div>
-      <div class="col col4">Column 4</div>
-      <div class="col col5">Column 5</div>
-    </div>
-  </div>
 
-  <!-- City Stays -->
-  <div class="container">
-    <h3 id="staysTitle">
-      <span class="cityName">San Francisco Stays...</span>
-      <!-- Note add to js var cityName function cityName + " " + "Weather" -->
-    </h3>
-    <div class="row" id="stays">
-      <div class="col col1">Column 1</div>
-      <div class="col col2">Column 2</div>
-      <div class="col col3">Column 3</div>
-      <div class="col col4">Column 4</div>
-      <div class="col col5">Column 5</div>
-    </div>
-  </div>
+
      
   <script src="./assets/js/script.js"></script>
 </body>

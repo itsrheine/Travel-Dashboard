@@ -20,16 +20,16 @@ button a {
 }
 
 .midblock {
-    overflow: hidden;
-    background-color: black;
-    display: block;
-    padding: 12px 12px;
-    position: center;
+
 }
 
-.logoSmall {
-    width: 15%;
+#logoSmall{
+    width: 60%;
+}
 
+#magnifySmall {
+    width: 25%;
+    float: right;
 }
 
 /* city image placeholder*/
@@ -37,27 +37,40 @@ button a {
     background-color: black;
     display: block;
     padding: 65px;
-    margin: 25px 115px 25px 115px;
+    margin: 10px 180px;
+}
+
+.heading {
+    margin: 13px 0 0 0;
+    padding: 5px;
 }
 
 .col {
-    display: block;
-    background-color: black;
-    padding: 65px;
     margin: 10px;
+    padding: 10px;
+}
+
+/* Row */
+.row {
+    color: white;
 }
 
 @font-face {
     font-family: 'Nouvelle Vague';
-    src: url('/font/NouvelleVague-Black.eot');
-    src: url('/font/NouvelleVague-Black.eot?#iefix') format('embedded-opentype'),
-        url('/font/NouvelleVague-Black.woff2') format('woff2'),
-        url('/font/NouvelleVague-Black.woff') format('woff'),
-        url('/font/NouvelleVague-Black.ttf') format('truetype'),
-        url('/font/NouvelleVague-Black.svg#NouvelleVague-Black') format('svg');
+    src: url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.eot');
+    src: url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.eot?#iefix') format('embedded-opentype'),
+        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.woff2') format('woff2'),
+        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.woff') format('woff'),
+        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.ttf') format('truetype'),
+        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.svg#NouvelleVague-Black') format('svg');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
+}
+
+.cityName {
+    font: 'Nouvelle Vague';
+    color: black;
 }
 
 .front-page-container {
