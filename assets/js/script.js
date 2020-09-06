@@ -132,9 +132,17 @@ var hotelSearch = function() {
                 a = document.createElement('a');
                 a.href =  hotelRes[1]; // Insted of calling setAttribute
                 a.class = "muted-link"; 
-                a.innerHTML = "Hotel Location" // <a>INNER_TEXT</a>
+                a.innerHTML = "<div class='muted-link'>Hotel Location</div>" // <a>INNER_TEXT</a>
                 hotelMapEl.appendChild(a);
                 // console.log(responseList[i].photos[0].html_attributions);
+
+                // /* CREATES LINK */
+                // btn = document.createElement('BUTTON');
+                // btn.onclick = "location.href=" + hotelRes[1]; // Insted of calling setAttribute
+                // btn.class = "btn btn-secondary"
+                // btn.innerText = "Hotel Location" // <a>INNER_TEXT</a>
+                // hotelMapEl.appendChild(btn);
+                // // console.log(responseList[i].photos[0].html_attributions);
                
             };
             
