@@ -40,10 +40,8 @@ button a {
     margin: 25px 115px 25px 115px;
 }
 
-<<<<<<< HEAD
 div .logo {
     font-size: 150px;
-=======
 .col {
     display: block;
     background-color: black;
@@ -70,7 +68,6 @@ div .logo {
     align-items: center;
     flex-direction: column;
     margin: 200px;
->>>>>>> b1361acad22710b6e8cc49b14ac4b8b2910475bc
 }
 
 div input {
@@ -78,7 +75,6 @@ div input {
     height: 30px;
 }
 
-<<<<<<< HEAD
 .col {
     margin: 10px;
     padding: 10px;
@@ -91,7 +87,6 @@ div input {
 .hotellink-p a:link, .hotellink-p a:visited {
     color:white;
 }
-=======
 
 /* Modal CSS */
 .modal {
@@ -130,4 +125,3 @@ div input {
     text-decoration: none;
     cursor: pointer;
 }
->>>>>>> b1361acad22710b6e8cc49b14ac4b8b2910475bc
