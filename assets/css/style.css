@@ -12,24 +12,6 @@ body{
     font-family;
 } */
 
-.row{
-    border: 2px solid blue;
-    background-color: black;
-}
-
-col{
-    border: 2px solid yellow;
-    background-color: yellow;
-}
-.front-page-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 200px;
-}
-
-
 div .logo {
     font-size: 150px;
 }
@@ -37,4 +19,17 @@ div .logo {
 div input {
     width: 70%;
     height: 30px;
+}
+
+.col {
+    margin: 10px;
+    padding: 10px;
+}
+
+.bg-black {
+    background: black;
+}
+
+.hotellink-p a:link, .hotellink-p a:visited {
+    color:white;
 }
