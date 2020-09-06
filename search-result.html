@@ -42,8 +42,8 @@
       <span class="close">&times;</span>
         <div class="front-page-container">
           <img src="./assets/images/Travel.svg" class="logo"/>
-          <input class="search-bar" type="text" placeholder=" Enter destination city ">
-          <button type="button" class="searchButton"><a href="./search-result.html">Search</a></button>
+          <input class="search-bar" type="text" id="inputValue" placeholder="Enter destination city">
+          <button type="submit" value="submit" class="searchButton"><a href="./search-result.html">Search</a></button>
         </div>    
       </div>
     </div>
@@ -55,8 +55,8 @@
   <!-- City Weather -->
     <div class="container bg-white">
       <div class="row">
-        <h3 id="weatherTitle" class="cityName">
-          San Francisco Weather...
+        <h3 id="weatherTitle"> 
+          <span id="cityName"></span> Weather...
         </h3>
       </div>
       <div class="row">
@@ -64,40 +64,40 @@
           <div id="day1" class="card-header text-warning"></div>
           <div class="card-body">
             <p><img id="Icon1"></span></p>
-            Temp: <p id="temp1" class="card-text text-white-50"></p>
-            Humidity: <p id="hum1" class="card-text"></p>
+            <p id="temp1" class="card-text text-white-50"></p>
+            <p id="hum1" class="card-text"></p>
           </div>
         </div>
         <div class="card text-white bg-dark mb-3 col col2" style="max-width: 18rem;">
           <div id="day2" class="card-header text-warning"></div>
           <div class="card-body">
             <p><img id="Icon2"></span></p>
-            Temp: <p id="temp2" class="card-text text-white-50"></p>
-            Humidity: <p id="hum2" class="card-text"></p>
+            <p id="temp2" class="card-text text-white-50"></p>
+            <p id="hum2" class="card-text"></p>
           </div>
         </div>
         <div class="card text-white bg-dark mb-3 col col3" style="max-width: 18rem;">
           <div id="day3" class="card-header text-warning"></div>
           <div class="card-body">
             <p><img id="Icon3"></span></p>
-            Temp: <p id="temp3" class="card-text text-white-50"></p>
-            Humidity: <p id="hum3" class="card-text"></p>
+            <p id="temp3" class="card-text text-white-50"></p>
+            <p id="hum3" class="card-text"></p>
           </div>
         </div>
         <div class="card text-white bg-dark mb-3 col col4" style="max-width: 18rem;">
           <div id="day4" class="card-header extt-warning"></div>
           <div class="card-body">
             <p><img id="Icon4"></span></p>
-            Temp: <p id="temp4" class="card-text text-white-50"></p>
-            Humidity: <p id="hum4" class="card-text"></p>
+            <p id="temp4" class="card-text text-white-50"></p>
+            <p id="hum4" class="card-text"></p>
           </div>
         </div>
         <div class="card text-white bg-dark mb-3 col col5" style="max-width: 18rem;">
           <div id="day5" class="card-header text-warning"></div>
           <div class="card-body">
             <p><img id="Icon5"></span></p>
-            Temp: <p id="temp5" class="card-text text-white-50"></p>
-            Humidity: <p id="hum5" class="card-text text-white"></p>
+            <p id="temp5" class="card-text text-white-50"></p>
+            <p id="hum5" class="card-text text-white"></p>
           </div>
         </div>
       </div>
@@ -106,8 +106,8 @@
     <!-- City Stays -->
     <div class="container bg-white">
       <div class="row">
-        <h3 id="hotelTitle" class="cityName">
-          San Francisco Stays...
+        <h3 id="hotelTitle">
+          <span id="cityName"></span> Stays...
         </h3>
       </div>
     <div class="row">
@@ -159,8 +159,8 @@
     <!-- City Eats -->
     <div class="container bg-white">
       <div class="row">
-        <h3 id="restaurantTitle" class="cityName">
-          San Francisco Eats
+        <h3 id="restaurantTitle">
+          <span id="cityName"></span> Eats...
         </h3>
       </div>
      

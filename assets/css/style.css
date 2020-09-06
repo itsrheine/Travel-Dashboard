@@ -36,6 +36,10 @@ button a {
     margin: 10px 180px;
 }
 
+#hotelTitle, #restaurantTitle, #weatherTitle {
+    color: black;
+}
+
 .heading {
     margin: 13px 0 0 0;
     padding: 5px;

@@ -10,38 +10,39 @@
 */
 
 var searchButton1 = document.querySelector(".searchButton1");
-var inputValue = document.querySelector(".inputValue").value;
 
 // modal variables
 var modal = document.getElementById("myModal");
 var searchButton2 = document.querySelector("#searchButton2");
 var span = document.getElementsByClassName("close")[0];
 
-var citiesSearched = [];
+// first page
+function formSubmitHandler() {
+    
+    var inputValue = document.getElementById("inputValue").value;
+    localStorage.setItem("cityValue", inputValue);
+    
+    // second page
+    document.getElementById("cityName").innerHTML("cityValue");
+    
+};
 
-// when search button is clicked 
-var formSubmitHandler = function(event) {
-    event.preventDefault();
 
-    get5Day(inputValue);
-    hotelSearch(inputValue);
 
-};    
+// // second search modal
+// searchButton2.onclick = function () {
+//     modal.style.display = "block";
+// }
 
-// second search modal
-searchButton2.onclick = function () {
-    modal.style.display = "block";
-}
+// span.onclick = function() {
+//     modal.style.display = "none";
+// }
 
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+// window.onclick = function(event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none";
+//     }
+// }
 
 var get5Day = function (value) {
 
@@ -83,8 +84,6 @@ var get5Day = function (value) {
         }
     })
 }
-
-get5Day();
 
 // get top 5 hotels
 var hotelSearch = function() {
@@ -161,4 +160,4 @@ var localSafe = function () {
     }
 }
 
-searchButton1.addEventListener("click", formSubmitHandler);
+document.getElementById("cityName").innerHTML=localStorage.getItem("cityValue");
