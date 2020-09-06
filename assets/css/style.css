@@ -29,3 +29,7 @@ div input {
 .bg-black {
     background: black;
 }
+
+.hotellink-p a:link, .hotellink-p a:visited {
+    color:white;
+}

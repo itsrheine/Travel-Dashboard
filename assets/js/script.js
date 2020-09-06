@@ -125,15 +125,15 @@ var hotelSearch = function() {
 
                 var hotelStr = responseList[i].photos[0].html_attributions[0];
                 // console.log("Checking str looks like String: \n", str); //checks is str is a string
+
                 var hotelRes = hotelStr.split('"');
                 
-                var hotelMap = hotelRes
-                hotelMapEl.innerText = hotelName;
-                hotelMapEl.setAttribute("href", hotelMap[1]);
-                // hotelMap[1]
-                // console.log(hotelMap)
-                
-                
+                /* CREATES LINK */
+                a = document.createElement('a');
+                a.href =  hotelRes[1]; // Insted of calling setAttribute
+                a.class = "muted-link"; 
+                a.innerHTML = hotelName + " Map" // <a>INNER_TEXT</a>
+                hotelMapEl.appendChild(a);
                 // console.log(responseList[i].photos[0].html_attributions);
                
             };
