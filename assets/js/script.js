@@ -43,7 +43,6 @@ window.onclick = function(event) {
     }
 }
 
-// 5 Day Weather Forecast
 var get5Day = function (value) {
 
     // format api url
