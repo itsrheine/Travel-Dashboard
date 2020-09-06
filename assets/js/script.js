@@ -132,7 +132,7 @@ var hotelSearch = function() {
                 a = document.createElement('a');
                 a.href =  hotelRes[1]; // Insted of calling setAttribute
                 a.class = "muted-link"; 
-                a.innerHTML = hotelName + " Map" // <a>INNER_TEXT</a>
+                a.innerHTML = "Hotel Location" // <a>INNER_TEXT</a>
                 hotelMapEl.appendChild(a);
                 // console.log(responseList[i].photos[0].html_attributions);
                
