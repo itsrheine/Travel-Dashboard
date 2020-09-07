@@ -50,22 +50,24 @@
   </div>
       
   <!-- City Image -->
-  <div class="cityImage card"></div>
+  <div class="cityImage card">
+
+  </div>
 
   <!-- City Weather -->
-    <div class="container bg-white">
+    <div class="container bg-dark">
       <div class="row">
         <h3 id="weatherTitle"> 
-          <span id="cityName"></span> Weather...
+          <span class="cityNameElW"></span> Weather...
         </h3>
       </div>
       <div class="row">
         <div class="card text-white bg-dark mb-3 col col1" style="max-width: 18rem;">
-          <div id="day1" class="card-header text-warning"></div>
+          <div class="card-header text-warning"><span id="day1"></span></div>
           <div class="card-body">
             <p><img id="Icon1"></span></p>
-            <p id="temp1" class="card-text text-white-50"></p>
-            <p id="hum1" class="card-text"></p>
+            <p class="card-text text-white-50"><span id="temp1"></span></p>
+            <p class="card-text"><span id="hum1"></span></p>
           </div>
         </div>
         <div class="card text-white bg-dark mb-3 col col2" style="max-width: 18rem;">
@@ -85,7 +87,7 @@
           </div>
         </div>
         <div class="card text-white bg-dark mb-3 col col4" style="max-width: 18rem;">
-          <div id="day4" class="card-header extt-warning"></div>
+          <div id="day4" class="card-header text-warning"></div>
           <div class="card-body">
             <p><img id="Icon4"></span></p>
             <p id="temp4" class="card-text text-white-50"></p>
@@ -107,7 +109,7 @@
     <div class="container bg-white">
       <div class="row">
         <h3 id="hotelTitle">
-          <span class="cityName"></span> Stays...
+          <span class="cityNameElH"></span> Stays...
         </h3>
       </div>
     <div class="row">
@@ -160,10 +162,12 @@
     <div class="container bg-white">
       <div class="row">
         <h3 id="restaurantTitle">
-          <span class="cityName"></span> Eats...
+          <span class="cityNameElE"></span> Eats...
         </h3>
       </div>
-     
+    </div>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./assets/js/search-result.js"></script>
 </body>
 </html>
