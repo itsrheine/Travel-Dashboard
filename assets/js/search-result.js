@@ -9,6 +9,15 @@
     A modal where I can input a different city to search for will pop up and you can do the process over again.
 */
 
+// Modal 
+function formSubmitHandler() {
+    
+    var inputValue = document.getElementById("inputValue").value;
+    localStorage.setItem("cityValue", inputValue);
+
+}
+
+
 function myFunction() {
 
     var cityValue = localStorage.getItem("cityValue");

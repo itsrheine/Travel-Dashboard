@@ -11,6 +11,9 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+  <!-- Modal Link -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
   <!-- Compressed CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
     integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
@@ -32,13 +35,27 @@
 
     </div>
     <div class="col col3">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="searchButton2">
-        Search</button>
+      <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button>
     </div>
     <div class="col col4">
       <img src="./assets/images/Travel.svg" id="logoSmall" />
     </div>
   </div>
+
+  <!-- Modal -->
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <img src="./assets/images/Travel.svg" class="logo"/>
+      <form action="./search-result.html">
+        <input class="search-bar" type="text" id="inputValue" placeholder="Enter your destination">
+        <button type="submit" onclick="formSubmitHandler()">Search</button>
+      </form>
+      </div>
+    </div>
+  </div>
+
 
   <!-- City Image -->
   <div class="cityImage card">
