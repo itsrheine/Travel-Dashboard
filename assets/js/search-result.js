@@ -9,32 +9,6 @@
     A modal where I can input a different city to search for will pop up and you can do the process over again.
 */
 
-// variable
-var searchButton2 = document.getElementsByClassName("searchButton2");
-
-// modal
-var modal = document.getElementById("myModal");
-var span = document.getElementsByClassName("close")[0];
-// var searchButton3 = document.getElementsByClassName("searchButton3");
-
-
-searchButton2.onclick = function () {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-
 function myFunction() {
 
     var cityValue = localStorage.getItem("cityValue");
@@ -182,5 +156,3 @@ var hotelSearch = function (value) {
 };
 
 hotelSearch();
-
-searchButton2 = document.addEventListener("click", modalClicked);

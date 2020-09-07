@@ -8,8 +8,15 @@
 
   <!-- Bootstrap Links -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Modal Bootstrap Links -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <!-- Compressed CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
@@ -30,7 +37,8 @@
 
     </div>
     <div class="col col3">
-      <button id="searchButton2">Search</button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="searchButton2">
+        Search</button>
     </div>
     <div class="col col4">
       <img src="./assets/images/Travel.svg" id="logoSmall" />
@@ -38,17 +46,25 @@
   </div>
 
   <!-- The Modal -->
-  <div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <img src="./assets/images/Travel.svg" class="logo" />
-      <input class="search-bar" type="text" id="inputValue" placeholder="Enter destination city">
-      <button type="submit" value="submit" class="searchButton3"><a href="./search-result.html">Search</a></button>
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+
+      </div>
     </div>
   </div>
-  </div>
-  </div>
+  
 
   <!-- City Image -->
   <div class="cityImage card">
