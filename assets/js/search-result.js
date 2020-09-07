@@ -1,14 +1,3 @@
-/*  
-    After typing in my city and pressing enter
-    I am presented with the city's top 5 hotels, restaurants and a 5 day forecast.
-    Upon submitting city name.
-    It's saved into local storage and displayed in your past searches next time you visit the app.
-    When I click a specific restaurant or hotel.
-    I am redirected to the hotel or restaurant's website.
-    When I click the search button on the city display page.
-    A modal where I can input a different city to search for will pop up and you can do the process over again.
-*/
-
 function myFunction() {
 
     var cityValue = localStorage.getItem("cityValue");
@@ -114,7 +103,7 @@ var hotelSearch = function (value) {
                 return hotelList;
             });
 
-            /* CYCLE THROUGH ARRAY FROM (counts down from 20 to 15) */
+            /* CYCLE THROUGH FROM END OF ARRAY (counts down from 20 to 15) */
             for (var i = responseList.length - 1; i >= 15; i--) {
                 // LINKS VARIABLES TO DOCUMENT ELEMENTS //
                 var hotelNameEl = document.getElementById("hotel-name" + i);
@@ -140,19 +129,9 @@ var hotelSearch = function (value) {
                 /* CREATES LINK */
                 a = document.createElement('a');
                 a.href = hotelRes[1]; // Insted of calling setAttribute
-                a.class = "muted-link";
-                a.innerHTML = "<div class='muted-link'>Hotel Location</div>" // <a>INNER_TEXT</a>
+                a.innerHTML = "Hotel Location" // <a>INNER_TEXT</a>
                 hotelMapEl.appendChild(a);
                 // console.log(responseList[i].photos[0].html_attributions);
-
-                // /* CREATES LINK */
-                // btn = document.createElement('BUTTON');
-                // btn.onclick = "location.href=" + hotelRes[1]; // Insted of calling setAttribute
-                // btn.class = "btn btn-secondary"
-                // btn.innerText = "Hotel Location" // <a>INNER_TEXT</a>
-                // hotelMapEl.appendChild(btn);
-                // // console.log(responseList[i].photos[0].html_attributions);
-
             };
         });
 };
