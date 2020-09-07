@@ -1101,7 +1101,7 @@ var cityFood = function () {
                    // loop the arry
                     var topFive = []
                     console.log(topFive);
-                    data.results[0,1,2,3,4,5,6,7].rating.map((resturant, i) => {
+                    data.results.map((resturant, i) => {
                         if (topFive.length < 5) {
                             topFive.push(resturant)
                             console.log(resturant);
