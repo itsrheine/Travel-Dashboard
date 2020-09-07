@@ -9,10 +9,35 @@
     A modal where I can input a different city to search for will pop up and you can do the process over again.
 */
 
+// variable
+var searchButton2 = document.getElementsByClassName("searchButton2");
+
+// modal
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+// var searchButton3 = document.getElementsByClassName("searchButton3");
+
+
+searchButton2.onclick = function () {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
 function myFunction() {
 
     var cityValue = localStorage.getItem("cityValue");
-    console.log(cityValue);
 
     // for the headers
     var cityNameElW = document.querySelector(".cityNameElW");
@@ -49,7 +74,6 @@ var get5Day = function (value) {
 
                     // secondary dashboard
                     var date = moment().add(i, 'days').format('l');
-                    console.log(date);
                     dateEl.innerHTML = date;
 
                     var temperatureValue = data.list[i].main.temp;
@@ -67,6 +91,7 @@ var get5Day = function (value) {
         }
     })
 }
+
 
 // get city's coordinates & uv index for main dashboard
 var cityCoord = function (data) {
@@ -88,12 +113,12 @@ var cityCoord = function (data) {
                 var coord = (latValue + "," + lonValue);
                 hotelSearch(coord);
                 // cityFood(coord);
-                console.log(coord);
 
             })
         }
     })
 }
+
 
 // Hotel Dashboard
 var hotelSearch = function (value) {
@@ -101,7 +126,6 @@ var hotelSearch = function (value) {
     var corsInput = "https://cors-anywhere.herokuapp.com/" //Fixes "cors" error.
     var hotelApi = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + value + "&radius=1500&type=hotel&keyword=hotel&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc";
     var hotelUrl = corsInput + hotelApi;
-    console.log(hotelApi);
 
     fetch(hotelUrl).then(function (response) {
         return response.json();
@@ -113,7 +137,6 @@ var hotelSearch = function (value) {
                 var hotelList = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;
                 return hotelList;
             });
-            // console.log(responseList)
 
             /* CYCLE THROUGH ARRAY FROM (counts down from 20 to 15) */
             for (var i = responseList.length - 1; i >= 15; i--) {
@@ -160,3 +183,4 @@ var hotelSearch = function (value) {
 
 hotelSearch();
 
+searchButton2 = document.addEventListener("click", modalClicked);

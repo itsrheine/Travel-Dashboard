@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 
-    <!-- Bootstrap Links -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Bootstrap Links -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <!-- Compressed CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous"> 
-    <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- Compressed CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+    integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body onload="myFunction()">
@@ -22,16 +24,16 @@
 
   <div class="row heading">
     <div class="col col1">
-      
+
     </div>
     <div class="col col2">
-      
+
     </div>
     <div class="col col3">
       <button id="searchButton2">Search</button>
     </div>
     <div class="col col4">
-      <img src="./assets/images/Travel.svg" id="logoSmall"/>
+      <img src="./assets/images/Travel.svg" id="logoSmall" />
     </div>
   </div>
 
@@ -40,78 +42,77 @@
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
-        <div class="front-page-container">
-          <img src="./assets/images/Travel.svg" class="logo"/>
-          <input class="search-bar" type="text" id="inputValue" placeholder="Enter destination city">
-          <button type="submit" value="submit" class="searchButton"><a href="./search-result.html">Search</a></button>
-        </div>    
-      </div>
+      <img src="./assets/images/Travel.svg" class="logo" />
+      <input class="search-bar" type="text" id="inputValue" placeholder="Enter destination city">
+      <button type="submit" value="submit" class="searchButton3"><a href="./search-result.html">Search</a></button>
     </div>
   </div>
-      
+  </div>
+  </div>
+
   <!-- City Image -->
   <div class="cityImage card">
 
   </div>
 
   <!-- City Weather -->
-    <div class="container bg-white">
-      <div class="row">
-        <h3 id="weatherTitle"> 
-          <span class="cityNameElW"></span> Weather...
-        </h3>
+  <div class="container bg-white">
+    <div class="row">
+      <h3 id="weatherTitle">
+        <span class="cityNameElW"></span> Weather...
+      </h3>
+    </div>
+    <div class="row">
+      <div class="card text-white bg-dark mb-3 col col1" style="max-width: 18rem;">
+        <div class="card-header text-warning"><span id="day1"></span></div>
+        <div class="card-body">
+          <p><img id="Icon1"></span></p>
+          <p class="card-text text-white-50"><span id="temp1"></span></p>
+          <p class="card-text"><span id="hum1"></span></p>
+        </div>
       </div>
-      <div class="row">
-        <div class="card text-white bg-dark mb-3 col col1" style="max-width: 18rem;">
-          <div class="card-header text-warning"><span id="day1"></span></div>
-          <div class="card-body">
-            <p><img id="Icon1"></span></p>
-            <p class="card-text text-white-50"><span id="temp1"></span></p>
-            <p class="card-text"><span id="hum1"></span></p>
-          </div>
+      <div class="card text-white bg-dark mb-3 col col2" style="max-width: 18rem;">
+        <div id="day2" class="card-header text-warning"></div>
+        <div class="card-body">
+          <p><img id="Icon2"></span></p>
+          <p id="temp2" class="card-text text-white-50"></p>
+          <p id="hum2" class="card-text"></p>
         </div>
-        <div class="card text-white bg-dark mb-3 col col2" style="max-width: 18rem;">
-          <div id="day2" class="card-header text-warning"></div>
-          <div class="card-body">
-            <p><img id="Icon2"></span></p>
-            <p id="temp2" class="card-text text-white-50"></p>
-            <p id="hum2" class="card-text"></p>
-          </div>
+      </div>
+      <div class="card text-white bg-dark mb-3 col col3" style="max-width: 18rem;">
+        <div id="day3" class="card-header text-warning"></div>
+        <div class="card-body">
+          <p><img id="Icon3"></span></p>
+          <p id="temp3" class="card-text text-white-50"></p>
+          <p id="hum3" class="card-text"></p>
         </div>
-        <div class="card text-white bg-dark mb-3 col col3" style="max-width: 18rem;">
-          <div id="day3" class="card-header text-warning"></div>
-          <div class="card-body">
-            <p><img id="Icon3"></span></p>
-            <p id="temp3" class="card-text text-white-50"></p>
-            <p id="hum3" class="card-text"></p>
-          </div>
+      </div>
+      <div class="card text-white bg-dark mb-3 col col4" style="max-width: 18rem;">
+        <div id="day4" class="card-header text-warning"></div>
+        <div class="card-body">
+          <p><img id="Icon4"></span></p>
+          <p id="temp4" class="card-text text-white-50"></p>
+          <p id="hum4" class="card-text"></p>
         </div>
-        <div class="card text-white bg-dark mb-3 col col4" style="max-width: 18rem;">
-          <div id="day4" class="card-header text-warning"></div>
-          <div class="card-body">
-            <p><img id="Icon4"></span></p>
-            <p id="temp4" class="card-text text-white-50"></p>
-            <p id="hum4" class="card-text"></p>
-          </div>
-        </div>
-        <div class="card text-white bg-dark mb-3 col col5" style="max-width: 18rem;">
-          <div id="day5" class="card-header text-warning"></div>
-          <div class="card-body">
-            <p><img id="Icon5"></span></p>
-            <p id="temp5" class="card-text text-white-50"></p>
-            <p id="hum5" class="card-text text-white"></p>
-          </div>
+      </div>
+      <div class="card text-white bg-dark mb-3 col col5" style="max-width: 18rem;">
+        <div id="day5" class="card-header text-warning"></div>
+        <div class="card-body">
+          <p><img id="Icon5"></span></p>
+          <p id="temp5" class="card-text text-white-50"></p>
+          <p id="hum5" class="card-text text-white"></p>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- City Stays -->
-    <div class="container bg-white">
-      <div class="row">
-        <h3 id="hotelTitle">
-          <span class="cityNameElH"></span> Stays...
-        </h3>
-      </div>
+  <!-- City Stays -->
+  <div class="container bg-white">
+    <div class="row">
+      <h3 id="hotelTitle">
+        <span class="cityNameElH"></span> Stays...
+      </h3>
+    </div>
     <div class="row">
       <div class="card text-white bg-dark mb-3 col col1" style="max-width: 18rem;">
         <div id="hotel-rating19" class="card-header text-warning"></div>
@@ -158,16 +159,17 @@
         </div>
       </div>
 
-    <!-- City Eats -->
-    <div class="container bg-white">
-      <div class="row">
-        <h3 id="restaurantTitle">
-          <span class="cityNameElE"></span> Eats...
-        </h3>
+      <!-- City Eats -->
+      <div class="container bg-white">
+        <div class="row">
+          <h3 id="restaurantTitle">
+            <span class="cityNameElE"></span> Eats...
+          </h3>
+        </div>
       </div>
-    </div>
-    
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="./assets/js/search-result.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+      <script src="./assets/js/search-result.js"></script>
 </body>
+
 </html>
