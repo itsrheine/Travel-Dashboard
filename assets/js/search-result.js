@@ -84,9 +84,10 @@ var cityCoord = function (data) {
                 // get remaining data for dashboard
                 var lonValue = data['coord']['lon'];
                 var latValue = data['coord']['lat'];
-                
+
                 var coord = (latValue + "," + lonValue);
                 hotelSearch(coord);
+                // cityFood(coord);
                 console.log(coord);
 
             })
@@ -94,28 +95,26 @@ var cityCoord = function (data) {
     })
 }
 
-
-
 // Hotel Dashboard
-var hotelSearch = function(value) {
+var hotelSearch = function (value) {
 
     var corsInput = "https://cors-anywhere.herokuapp.com/" //Fixes "cors" error.
-    var hotelApi = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+value+"&radius=1500&type=hotel&keyword=hotel&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc";
+    var hotelApi = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + value + "&radius=1500&type=hotel&keyword=hotel&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc";
     var hotelUrl = corsInput + hotelApi;
     console.log(hotelApi);
 
-    fetch(hotelUrl).then(function(response) {
-    return response.json();
+    fetch(hotelUrl).then(function (response) {
+        return response.json();
     })
-        .then(function(response) { 
-            
+        .then(function (response) {
+
             /* SORTING RESPONSE BY RATING */
-            var responseList = response.results.sort(function(a, b) {
+            var responseList = response.results.sort(function (a, b) {
                 var hotelList = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;
                 return hotelList;
             });
             // console.log(responseList)
-        
+
             /* CYCLE THROUGH ARRAY FROM (counts down from 20 to 15) */
             for (var i = responseList.length - 1; i >= 15; i--) {
                 // LINKS VARIABLES TO DOCUMENT ELEMENTS //
@@ -123,7 +122,7 @@ var hotelSearch = function(value) {
                 var hotelAddressEl = document.getElementById("hotel-address" + i);
                 var hotelRatingEl = document.getElementById("hotel-rating" + i);
                 var hotelMapEl = document.getElementById("hotel-map" + i);
-            
+
 
                 var hotelName = responseList[i].name;
                 hotelNameEl.innerText = hotelName;
@@ -138,11 +137,11 @@ var hotelSearch = function(value) {
                 // console.log("Checking str looks like String: \n", str); //checks is str is a string
 
                 var hotelRes = hotelStr.split('"');
-                
+
                 /* CREATES LINK */
                 a = document.createElement('a');
-                a.href =  hotelRes[1]; // Insted of calling setAttribute
-                a.class = "muted-link"; 
+                a.href = hotelRes[1]; // Insted of calling setAttribute
+                a.class = "muted-link";
                 a.innerHTML = "<div class='muted-link'>Hotel Location</div>" // <a>INNER_TEXT</a>
                 hotelMapEl.appendChild(a);
                 // console.log(responseList[i].photos[0].html_attributions);
@@ -154,9 +153,10 @@ var hotelSearch = function(value) {
                 // btn.innerText = "Hotel Location" // <a>INNER_TEXT</a>
                 // hotelMapEl.appendChild(btn);
                 // // console.log(responseList[i].photos[0].html_attributions);
-            
+
             };
         });
 };
-        
+
 hotelSearch();
+
