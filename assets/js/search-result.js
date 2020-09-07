@@ -20,6 +20,8 @@ function myFunction() {
     cityNameElH.innerHTML = cityValue;
     var cityNameElE = document.querySelector(".cityNameElE");
     cityNameElE.innerHTML = cityValue;
+    var cityNameElT = document.querySelector("#title");
+    cityNameElT.innerHTML = cityValue + "Travels";
 
     get5Day(cityValue);
     cityCoord(cityValue);
