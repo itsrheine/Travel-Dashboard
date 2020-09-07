@@ -1,5 +1,4 @@
-![alt text][logo]
-![logo](.assets/images/Travel.svg)
+![Travel Logo](.assets/images/Travel.png)
 
 # Travel Dashboard
 Plan your trips with ease and peace of mind. Search a city to travel to and have an overview of how the city's weather forecast in the next 5-days will look like. See the top rated places to eat and stay. Be a travel expert with this travel dashboard. 
