@@ -1,5 +1,6 @@
 ![alt text][logo]
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+![logo](.assets/images/Travel.svg)
+
 # Travel Dashboard
 Plan your trips with ease and peace of mind. Search a city to travel to and have an overview of how the city's weather forecast in the next 5-days will look like. See the top rated places to eat and stay. Be a travel expert with this travel dashboard. 
 
@@ -9,7 +10,7 @@ Plan your trips with ease and peace of mind. Search a city to travel to and have
 2. Upon submitting city name.
     * It's saved into local storage and displayed in your past searches next time you visit the app.
 3. When I click a specific restaurant or hotel.
-    * I am redirected to the hotel or restaurant's website.
+    * I am redirected to the hotel or restaurant's map location.
 4. When I click the search button on the city display page.
     * A modal where I can input a different city to search for will pop up and you can do the process over again.
 
