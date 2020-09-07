@@ -21,7 +21,7 @@ function myFunction() {
     var cityNameElE = document.querySelector(".cityNameElE");
     cityNameElE.innerHTML = cityValue;
     var cityNameElT = document.querySelector("#title");
-    cityNameElT.innerHTML = cityValue + "Travels";
+    cityNameElT.innerHTML = cityValue + " Travel";
 
     get5Day(cityValue);
     cityCoord(cityValue);
