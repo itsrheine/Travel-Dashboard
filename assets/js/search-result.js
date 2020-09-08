@@ -109,7 +109,7 @@ var hotelSearch = function (value) {
                     var businessStatus = responseList[i].business_status;
                     
                     function titleCase(string) {
-                        businessStatus = string.toLowerCase().split(" ");
+                        businessStatus = string.toLowerCase().split("_");
                         for(var i = 0; i< businessStatus.length; i++){
                             businessStatus[i] = businessStatus[i][0].toUpperCase() + businessStatus[i].slice(1);
                         }
@@ -125,13 +125,13 @@ var hotelSearch = function (value) {
                     // console.log(responseList[i].photos[0].html_attributions);
                 } else {
                     var businessStatus = responseList[i].business_status;
-                    
+
                     function titleCase(string) {
-                        businessStatus = string.toLowerCase().split(" ");
+                        businessStatus = string.toLowerCase().split("_");
                         for(var i = 0; i< businessStatus.length; i++){
                             businessStatus[i] = businessStatus[i][0].toUpperCase() + businessStatus[i].slice(1);
                         }
-                        businessStatus.join(" ");
+                        businessStatus.join(", ");
                         return businessStatus
                     };
                     titleCase(businessStatus)
