@@ -180,7 +180,7 @@ var photoSearch = function (value) {
     var cityName = value.toLowerCase();
 
 
-        if (cityName = "san francisco") {
+        if (cityName === "san francisco") {
             cityName = cityName.replace(/san francisco/g, "san-francisco-bay-area");
 
             
