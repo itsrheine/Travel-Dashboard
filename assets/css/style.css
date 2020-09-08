@@ -55,12 +55,19 @@ button a {
 .cityImage {
     background-color: black;
     display: block;
-    padding: 65px;
+    padding: 20px;
     margin: 10px 180px;
 }
 
 #hotelTitle, #restaurantTitle, #weatherTitle {
     color: black;
+}
+
+#cityImage {
+    max-width: 100%;
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
 }
 
 .heading {

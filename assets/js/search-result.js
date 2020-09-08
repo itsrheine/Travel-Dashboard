@@ -98,7 +98,7 @@ var hotelSearch = function (value) {
     })
         .then(function (response) {
 
-            /* SORTING RESPONSE BY RATING FROM WORST TO BEST */
+            /* SORTING RESPONSE BY RATING FROM WORST TO BEST z*/
             var responseList = response.results.sort(function (a, b) {
                 var hotelList = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;
                 return hotelList;
