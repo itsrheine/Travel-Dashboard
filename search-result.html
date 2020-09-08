@@ -45,13 +45,21 @@
   <!-- Modal -->
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content">
-      <div class="w3-container">
+
+      <!-- Modal Header -->
+      <header class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+      </header>
+
+      <!-- Modal Container -->
+      <div class="w3-container topsearch">
         <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <img src="./assets/images/Travel.svg" class="logo"/>
-      <form action="./search-result.html">
-        <input class="search-bar" type="text" id="inputValue" placeholder="Enter your destination">
-        <button type="submit" onclick="formSubmitHandler()">Search</button>
-      </form>
+        <img src="./assets/images/Travel.svg" class="logo" id="logoModal"/>
+        <form action="./search-result.html">
+          <input type="text" id="inputValue" placeholder="Enter your destination">
+          <button type="submit" onclick="formSubmitHandler()" id="submit">Search</button>
+        </form>
       </div>
     </div>
   </div>

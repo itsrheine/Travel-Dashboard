@@ -28,6 +28,29 @@ button a {
     float: right;
 }
 
+#logoModal {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/* Style the search box inside the navigation bar */
+.topsearch input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+}
+
+#submit {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* city image placeholder*/
 .cityImage {
     background-color: black;
