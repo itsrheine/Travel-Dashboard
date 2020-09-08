@@ -59,20 +59,20 @@ var cityWeather = function (value) {
 // api key a9kdLi-v4txmsrRgTFeTgvVop5k6ldC0K1quPvEG7qqeKZSbsuXE0Ta6CdmOkY1gsbfOg6tGNlj8_0fkj2BKjteccbnYUXkrP59niNbGJUv5YpU7TyngFlTEgwRPX3Yx
 // dashboard - grubHub - search by city
 var cityFood = function () {
-    foodApi="https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyD3fr4ELXNC6kKlSBcVbjNyU_NxjXiK0p0"
+    foodApi="https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=32.715736,-117.161087&radius=1500&type=restaurant&keyword=restaurant&key=AIzaSyD3fr4ELXNC6kKlSBcVbjNyU_NxjXiK0p0"
 
            
                 fetch(foodApi).then(function (response) {
                     return response.json();
                 })
                     .then(function (response) {
-
+console.log(response)
                         /* SORTING RESPONSE BY RATING */
                         var responseList = response.results.sort(function (a, b) {
                             var resturantList = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;
                             return resturantList;
                         });
-                        for (var i = responseList.length - 1; i >= 15; i--) {
+                        for (var i = responseList.length - 1; i >= 14; i--) {
                             // LINKS VARIABLES TO DOCUMENT ELEMENTS //
                             var resturantNameEl = document.getElementById("resturant-name" + i);
                             var resturantAddressEl = document.getElementById("resturant-address" + i);
@@ -89,17 +89,58 @@ var cityFood = function () {
                             var resturantRating = responseList[i].rating;
                             resturantRatingEl.innerHTML = resturantRating + "&#9733" + " rating";
 
-                            var resturantStr = responseList[i].photos[0].html_attributions[0];
-
-                            var resturantRes = resturantStr.split('"');
-
-                            /* CREATES LINK */
-                            a = document.createElement('a');
-                            a.href = resturantRes[1]; 
-                            a.class = "muted-link";
-                            a.innerHTML = "resturant Location" 
-                            resturantMapEl.appendChild(a);
-
+                            if (responseList[i].photos === undefined) {
+                                var businessStatus = responseList[i].business_status;
+                                
+                                function titleCase(string) {
+                                    businessStatus = string.toLowerCase().split("_");
+                                    for(var i = 0; i< businessStatus.length; i++){
+                                        businessStatus[i] = businessStatus[i][0].toUpperCase() + businessStatus[i].slice(1);
+                                    }
+                                    businessStatus.join(" ");
+                                    return businessStatus
+                                };
+                                titleCase(businessStatus)
+            
+                                /* CREATES BUSINESS STATUS */
+                                p = document.createElement('p');
+                                p.innerHTML = "Status: " + businessStatus // <a>INNER_TEXT</a>
+                                hotelMapEl.appendChild(p);
+                                // console.log(responseList[i].photos[0].html_attributions);
+                            } else {
+                                var businessStatus = responseList[i].business_status;
+            
+                                function titleCase(string) {
+                                    businessStatus = string.toLowerCase().split("_");
+                                    for(var i = 0; i< businessStatus.length; i++){
+                                        businessStatus[i] = businessStatus[i][0].toUpperCase() + businessStatus[i].slice(1);
+                                    }
+                                    businessStatus.join(" ");
+                                    return businessStatus
+                                };
+                                titleCase(businessStatus)
+            
+                                /* CREATES BUSINESS STATUS */
+                                p = document.createElement('p');
+                                p.innerHTML = "Status: " + businessStatus // <a>INNER_TEXT</a>
+                                hotelMapEl.appendChild(p);
+                                // console.log(responseList[i].photos[0].html_attributions);
+            
+                                
+                                var hotelStr = responseList[i].photos[0].html_attributions[0];
+                                // console.log("Checking str looks like String: \n", str); //checks is str is a string
+                                var hotelRes = hotelStr.split('"'); //Splits string by every quotation mark.
+            
+                                /* CREATES LINK */
+                                a = document.createElement('a');
+                                a.href = hotelRes[1]; // Insted of calling setAttribute
+                                a.innerHTML = "Hotel Location" // <a>INNER_TEXT</a>
+                                hotelMapEl.appendChild(a);
+                                // console.log(responseList[i].photos[0].html_attributions);
+                            };
+                        };
+                    });
+            };
                         };
                     });
             }
