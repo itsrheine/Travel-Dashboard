@@ -35,7 +35,6 @@ var get5Day = function (value) {
                     // variables - 5 day forecast
                     var dateEl = document.querySelector("#day" + i);
                     var tempEl = document.querySelector("#temp" + i);
-                    var humiEl = document.querySelector("#hum" + i);
                     var iconEl = document.querySelector("#Icon" + i);
 
                     // secondary dashboard
@@ -45,9 +44,6 @@ var get5Day = function (value) {
                     var temperatureValue = data.list[i].main.temp;
                     var temperatureFarhenheit = Math.round(((temperatureValue - 273.15) * 1.8) + 32) + "°F";
                     tempEl.innerHTML = temperatureFarhenheit;
-
-                    var humidityValue = data.list[i].main.humidity + "%";
-                    humiEl.innerHTML = humidityValue;
 
                     var iconVal = data.list[i].weather[0].icon; // this is the code
                     iconEl.setAttribute("src", "https://openweathermap.org/img/w/" + iconVal + ".png");
@@ -180,7 +176,7 @@ var photoSearch = function (value) {
     var cityName = value.toLowerCase();
 
 
-        if (cityName = "san francisco") {
+        if (cityName === "san francisco") {
             cityName = cityName.replace(/san francisco/g, "san-francisco-bay-area");
 
             
@@ -235,4 +231,15 @@ var photoSearch = function (value) {
         }
      console.log(cityName)
     
-};
+};dd
+
+// Restaurant
+
+
+// Modal
+function formSubmitHandler() {
+    
+    var inputValue = document.getElementById("inputValue").value;
+    localStorage.setItem("cityValue", inputValue);
+
+}
