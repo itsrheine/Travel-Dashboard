@@ -16,27 +16,6 @@ function myFunction() {
     cityCoord(cityValue);
 }
 
-var photoSearch = function (value) { 
-    var testApi = "https://api.teleport.org/api/urban_areas/slug:manila/images/";
-    var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ value + "/images/";
-
-    fetch(testApi).then(function (response) {
-        return response.json();
-    })
-        .then(function (response) {
-
-            
-
-            /* CREATES LINK */
-            a = document.createElement('a');
-            a.href = hotelRes[1]; // Insted of calling setAttribute
-            a.innerHTML = "Hotel Location" // <a>INNER_TEXT</a>
-            hotelMapEl.appendChild(a);
-            // console.log(responseList[i].photos[0].html_attributions);
- 
-        });
-};
-
 // Weather Dashboard
 var get5Day = function (value) {
 
@@ -157,4 +136,23 @@ var hotelSearch = function (value) {
         });
 };
 
-hotelSearch();
+
+var photoSearch = function (value) { 
+    var testApi = "https://api.teleport.org/api/urban_areas/slug:manila/images/";
+    var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ value + "/images/";
+
+    fetch(testApi).then(function (response) {
+        return response.json();
+    })
+        .then(function (response) {
+            console.log(response.photos[0].image.web)
+            // /* CREATES LINK */
+            // a = document.createElement('a');
+            // a.href = hotelRes[1]; // Insted of calling setAttribute
+            // a.innerHTML = "Hotel Location" // <a>INNER_TEXT</a>
+            // hotelMapEl.appendChild(a);
+            // // console.log(responseList[i].photos[0].html_attributions);
+ 
+        });
+};
+photoSearch();
