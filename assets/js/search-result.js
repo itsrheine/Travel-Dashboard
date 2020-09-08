@@ -1,20 +1,4 @@
-function myFunction() {
 
-    var cityValue = localStorage.getItem("cityValue");
-
-    // for the headers
-    var cityNameElW = document.querySelector(".cityNameElW");
-    cityNameElW.innerHTML = cityValue;
-    var cityNameElH = document.querySelector(".cityNameElH");
-    cityNameElH.innerHTML = cityValue;
-    var cityNameElE = document.querySelector(".cityNameElE");
-    cityNameElE.innerHTML = cityValue;
-    var cityNameElT = document.querySelector("#title");
-    cityNameElT.innerHTML = cityValue + " Travel";
-
-    get5Day(cityValue);
-    cityCoord(cityValue);
-}
 
 // Weather Dashboard
 var get5Day = function (value) {
@@ -110,7 +94,7 @@ var hotelSearch = function (value) {
                 var hotelAddressEl = document.getElementById("hotel-address" + i);
                 var hotelRatingEl = document.getElementById("hotel-rating" + i);
                 var hotelMapEl = document.getElementById("hotel-map" + i);
-
+                console.log(responseList)
 
                 var hotelName = responseList[i].name;
                 hotelNameEl.innerText = hotelName;
@@ -121,9 +105,18 @@ var hotelSearch = function (value) {
                 var hotelRating = responseList[i].rating;
                 hotelRatingEl.innerHTML = hotelRating + "&#9733" + " rating";
 
+                if (responseList[i].photos === undefined) {
+                    /* CREATES BUSINESS STATUS */
+                    p = document.createElement('p');
+                    p.innerHTML = "Status: " + responseList[i].business_status // <a>INNER_TEXT</a>
+                    hotelMapEl.appendChild(p);
+                    // console.log(responseList[i].photos[0].html_attributions);
+                } else {
+                p = document.createElement('p');
+                p.innerHTML = "Status: " + responseList[i].business_status // <a>INNER_TEXT</a>
+                hotelMapEl.appendChild(p);
                 var hotelStr = responseList[i].photos[0].html_attributions[0];
                 // console.log("Checking str looks like String: \n", str); //checks is str is a string
-
                 var hotelRes = hotelStr.split('"');
 
                 /* CREATES LINK */
@@ -132,27 +125,47 @@ var hotelSearch = function (value) {
                 a.innerHTML = "Hotel Location" // <a>INNER_TEXT</a>
                 hotelMapEl.appendChild(a);
                 // console.log(responseList[i].photos[0].html_attributions);
+                };
             };
         });
 };
 
 
 var photoSearch = function (value) { 
-    var testApi = "https://api.teleport.org/api/urban_areas/slug:manila/images/";
+    toLowerCase(value);
+
+    // var testApi = "https://api.teleport.org/api/urban_areas/slug:san-diego/images/";
     var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ value + "/images/";
 
-    fetch(testApi).then(function (response) {
+    fetch(photoURL).then(function (response) {
         return response.json();
     })
         .then(function (response) {
-            console.log(response.photos[0].image.web)
-            // /* CREATES LINK */
-            // a = document.createElement('a');
-            // a.href = hotelRes[1]; // Insted of calling setAttribute
-            // a.innerHTML = "Hotel Location" // <a>INNER_TEXT</a>
-            // hotelMapEl.appendChild(a);
-            // // console.log(responseList[i].photos[0].html_attributions);
+            
+            var cityPhotoEl = document.getElementById("cityImage");
+            var photoLink = response.photos[0].image.web;
+            console.log(photoLink)
+            /* INSERTS PHOTO */
+            cityPhotoEl.setAttribute("src", photoLink)
  
         });
 };
-photoSearch();
+
+function myFunction() {
+
+    var cityValue = localStorage.getItem("cityValue");
+
+    // for the headers
+    var cityNameElW = document.querySelector(".cityNameElW");
+    cityNameElW.innerHTML = cityValue;
+    var cityNameElH = document.querySelector(".cityNameElH");
+    cityNameElH.innerHTML = cityValue;
+    var cityNameElE = document.querySelector(".cityNameElE");
+    cityNameElE.innerHTML = cityValue;
+    var cityNameElT = document.querySelector("#title");
+    cityNameElT.innerHTML = cityValue + " Travel";
+
+    get5Day(cityValue);
+    cityCoord(cityValue);
+    photoSearch(cityValue);
+}
