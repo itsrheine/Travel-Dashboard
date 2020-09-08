@@ -118,11 +118,11 @@ var hotelSearch = function (value) {
                 var hotelRating = responseList[i].rating;
                 hotelRatingEl.innerHTML = hotelRating + "&#9733" + " rating";
 
-                if (responseList[i].photos === undefined) {
+                if (responseList[i].photos === undefined) { //if there is no hotel map link it just display business status.
                     var businessStatus = responseList[i].business_status;
                     
-                    function titleCase(string) {
-                        businessStatus = string.toLowerCase().split("_");
+                    function titleCase(string) { //changes string into proper casing.
+                        businessStatus = string.toLowerCase().split("_"); //gets rid of underscore for Temporarily_closed
                         for(var i = 0; i< businessStatus.length; i++){
                             businessStatus[i] = businessStatus[i][0].toUpperCase() + businessStatus[i].slice(1);
                         }
@@ -135,7 +135,7 @@ var hotelSearch = function (value) {
                     p = document.createElement('p');
                     p.innerHTML = "Status: " + businessStatus // <a>INNER_TEXT</a>
                     hotelMapEl.appendChild(p);
-                    // console.log(responseList[i].photos[0].html_attributions);
+                    
                 } else {
                     var businessStatus = responseList[i].business_status;
 
@@ -153,7 +153,7 @@ var hotelSearch = function (value) {
                     p = document.createElement('p');
                     p.innerHTML = "Status: " + businessStatus // <a>INNER_TEXT</a>
                     hotelMapEl.appendChild(p);
-                    // console.log(responseList[i].photos[0].html_attributions);
+                    
 
                     
                     var hotelStr = responseList[i].photos[0].html_attributions[0];
@@ -165,7 +165,7 @@ var hotelSearch = function (value) {
                     a.href = hotelRes[1]; // Insted of calling setAttribute
                     a.innerHTML = "Hotel Location" // <a>INNER_TEXT</a>
                     hotelMapEl.appendChild(a);
-                    // console.log(responseList[i].photos[0].html_attributions);
+                   
                 };
             };
         });
@@ -176,7 +176,7 @@ var photoSearch = function (value) {
     var cityName = value.toLowerCase();
 
 
-        if (cityName === "san francisco") {
+        if (cityName === "san francisco") { //fixes san francisco bug.
             cityName = cityName.replace(/san francisco/g, "san-francisco-bay-area");
 
             
@@ -213,7 +213,7 @@ var photoSearch = function (value) {
     
             });
         
-        } else {
+        } else { //just push through with lowercased cityName.
     
             var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ cityName + "/images/";
 
@@ -229,9 +229,9 @@ var photoSearch = function (value) {
     
             });
         }
-     console.log(cityName)
+
     
-};dd
+};
 
 // Restaurant
 
