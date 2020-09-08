@@ -148,7 +148,7 @@ var hotelSearch = function (value) {
                         for(var i = 0; i< businessStatus.length; i++){
                             businessStatus[i] = businessStatus[i][0].toUpperCase() + businessStatus[i].slice(1);
                         }
-                        businessStatus.join(", ");
+                        businessStatus.join(" ");
                         return businessStatus
                     };
                     titleCase(businessStatus)
@@ -179,42 +179,60 @@ var hotelSearch = function (value) {
 var photoSearch = function (value) { 
     var cityName = value.toLowerCase();
 
-        if (cityName.includes(" ")) {    
-        cityName = cityName.replace(/ /g, "-");
 
-        
-        var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ cityName + "/images/";
+        if (cityName = "san francisco") {
+            cityName = cityName.replace(/san francisco/g, "san-francisco-bay-area");
 
-        fetch(photoURL).then(function (response) {
-            return response.json();
-        })
-            .then(function (response) {
-                
-                var cityPhotoEl = document.getElementById("cityImage");
-                var photoLink = response.photos[0].image.web;
-                /* INSERTS PHOTO */
-                cityPhotoEl.setAttribute("src", photoLink)
- 
-         });
+            
+            var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ cityName + "/images/";
 
-         console.log(cityName)
+            fetch(photoURL).then(function (response) {
+                return response.json();
+            })
+                .then(function (response) {
+                    
+                    var cityPhotoEl = document.getElementById("cityImage");
+                    var photoLink = response.photos[0].image.web;
+                    /* INSERTS PHOTO */
+                    cityPhotoEl.setAttribute("src", photoLink)
+    
+            });
+
+
+        }else if(cityName.includes(" ")) {    //spaces are converted to dashes. 
+            cityName = cityName.replace(/ /g, "-");
+
+            
+            var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ cityName + "/images/";
+
+            fetch(photoURL).then(function (response) {
+                return response.json();
+            })
+                .then(function (response) {
+                    
+                    var cityPhotoEl = document.getElementById("cityImage");
+                    var photoLink = response.photos[0].image.web;
+                    /* INSERTS PHOTO */
+                    cityPhotoEl.setAttribute("src", photoLink)
+    
+            });
         
         } else {
     
-        var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ cityName + "/images/";
+            var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ cityName + "/images/";
 
-        fetch(photoURL).then(function (response) {
-            return response.json();
-        })
-            .then(function (response) {
-                
-                var cityPhotoEl = document.getElementById("cityImage");
-                var photoLink = response.photos[0].image.web;
-                /* INSERTS PHOTO */
-                cityPhotoEl.setAttribute("src", photoLink)
- 
-         });
+            fetch(photoURL).then(function (response) {
+                return response.json();
+            })
+                .then(function (response) {
+                    
+                    var cityPhotoEl = document.getElementById("cityImage");
+                    var photoLink = response.photos[0].image.web;
+                    /* INSERTS PHOTO */
+                    cityPhotoEl.setAttribute("src", photoLink)
+    
+            });
         }
-     
+     console.log(cityName)
     
 };

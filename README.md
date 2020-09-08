@@ -20,7 +20,7 @@ Plan your trips with ease and peace of mind. Search a city to travel to and have
 
 ## API used
 * https://developers.google.com/places/web-service/search
-* Link
+* https://api.teleport.org/api/urban_areas
 * Link
 
 ## Link to Website
