@@ -160,22 +160,24 @@ var hotelSearch = function (value) {
 
 
 var photoSearch = function (value) { 
-    toLowerCase(value);
+    var cityName = value.toLowerCase();
 
-    // var testApi = "https://api.teleport.org/api/urban_areas/slug:san-diego/images/";
-    var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ value + "/images/";
+    console.log(cityName)
 
-    fetch(photoURL).then(function (response) {
-        return response.json();
-    })
-        .then(function (response) {
+    // // var testApi = "https://api.teleport.org/api/urban_areas/slug:san-diego/images/";
+    // var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ value + "/images/";
+
+    // fetch(photoURL).then(function (response) {
+    //     return response.json();
+    // })
+    //     .then(function (response) {
             
-            var cityPhotoEl = document.getElementById("cityImage");
-            var photoLink = response.photos[0].image.web;
-            /* INSERTS PHOTO */
-            cityPhotoEl.setAttribute("src", photoLink)
+    //         var cityPhotoEl = document.getElementById("cityImage");
+    //         var photoLink = response.photos[0].image.web;
+    //         /* INSERTS PHOTO */
+    //         cityPhotoEl.setAttribute("src", photoLink)
  
-        });
+    //     });
 };
 
 function myFunction() {
