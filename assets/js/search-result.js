@@ -25,42 +25,15 @@ var photoSearch = function (value) {
     })
         .then(function (response) {
 
-            /* SORTING RESPONSE BY RATING FROM WORST TO BEST */
-            var responseList = response.results.sort(function (a, b) {
-                var hotelList = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;
-                return hotelList;
-            });
+            
 
-            /* CYCLE THROUGH FROM END OF ARRAY (counts down from 20 to 15) */
-            for (var i = responseList.length - 1; i >= 15; i--) {
-                // LINKS VARIABLES TO DOCUMENT ELEMENTS //
-                var hotelNameEl = document.getElementById("hotel-name" + i);
-                var hotelAddressEl = document.getElementById("hotel-address" + i);
-                var hotelRatingEl = document.getElementById("hotel-rating" + i);
-                var hotelMapEl = document.getElementById("hotel-map" + i);
-
-
-                var hotelName = responseList[i].name;
-                hotelNameEl.innerText = hotelName;
-
-                var hotelAddress = responseList[i].vicinity;
-                hotelAddressEl.innerText = hotelAddress;
-
-                var hotelRating = responseList[i].rating;
-                hotelRatingEl.innerHTML = hotelRating + "&#9733" + " rating";
-
-                var hotelStr = responseList[i].photos[0].html_attributions[0];
-                // console.log("Checking str looks like String: \n", str); //checks is str is a string
-
-                var hotelRes = hotelStr.split('"');
-
-                /* CREATES LINK */
-                a = document.createElement('a');
-                a.href = hotelRes[1]; // Insted of calling setAttribute
-                a.innerHTML = "Hotel Location" // <a>INNER_TEXT</a>
-                hotelMapEl.appendChild(a);
-                // console.log(responseList[i].photos[0].html_attributions);
-            };
+            /* CREATES LINK */
+            a = document.createElement('a');
+            a.href = hotelRes[1]; // Insted of calling setAttribute
+            a.innerHTML = "Hotel Location" // <a>INNER_TEXT</a>
+            hotelMapEl.appendChild(a);
+            // console.log(responseList[i].photos[0].html_attributions);
+ 
         });
 };
 
