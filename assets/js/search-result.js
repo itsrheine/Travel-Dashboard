@@ -94,7 +94,7 @@ var hotelSearch = function (value) {
                 var hotelAddressEl = document.getElementById("hotel-address" + i);
                 var hotelRatingEl = document.getElementById("hotel-rating" + i);
                 var hotelMapEl = document.getElementById("hotel-map" + i);
-                console.log(responseList)
+               
 
                 var hotelName = responseList[i].name;
                 hotelNameEl.innerText = hotelName;
@@ -106,25 +106,53 @@ var hotelSearch = function (value) {
                 hotelRatingEl.innerHTML = hotelRating + "&#9733" + " rating";
 
                 if (responseList[i].photos === undefined) {
+                    var businessStatus = responseList[i].business_status;
+                    
+                    function titleCase(string) {
+                        businessStatus = string.toLowerCase().split(" ");
+                        for(var i = 0; i< businessStatus.length; i++){
+                            businessStatus[i] = businessStatus[i][0].toUpperCase() + businessStatus[i].slice(1);
+                        }
+                        businessStatus.join(" ");
+                        return businessStatus
+                    };
+                    titleCase(businessStatus)
+
                     /* CREATES BUSINESS STATUS */
                     p = document.createElement('p');
-                    p.innerHTML = "Status: " + responseList[i].business_status // <a>INNER_TEXT</a>
+                    p.innerHTML = "Status: " + businessStatus // <a>INNER_TEXT</a>
                     hotelMapEl.appendChild(p);
                     // console.log(responseList[i].photos[0].html_attributions);
                 } else {
-                p = document.createElement('p');
-                p.innerHTML = "Status: " + responseList[i].business_status // <a>INNER_TEXT</a>
-                hotelMapEl.appendChild(p);
-                var hotelStr = responseList[i].photos[0].html_attributions[0];
-                // console.log("Checking str looks like String: \n", str); //checks is str is a string
-                var hotelRes = hotelStr.split('"');
+                    var businessStatus = responseList[i].business_status;
+                    
+                    function titleCase(string) {
+                        businessStatus = string.toLowerCase().split(" ");
+                        for(var i = 0; i< businessStatus.length; i++){
+                            businessStatus[i] = businessStatus[i][0].toUpperCase() + businessStatus[i].slice(1);
+                        }
+                        businessStatus.join(" ");
+                        return businessStatus
+                    };
+                    titleCase(businessStatus)
 
-                /* CREATES LINK */
-                a = document.createElement('a');
-                a.href = hotelRes[1]; // Insted of calling setAttribute
-                a.innerHTML = "Hotel Location" // <a>INNER_TEXT</a>
-                hotelMapEl.appendChild(a);
-                // console.log(responseList[i].photos[0].html_attributions);
+                    /* CREATES BUSINESS STATUS */
+                    p = document.createElement('p');
+                    p.innerHTML = "Status: " + businessStatus // <a>INNER_TEXT</a>
+                    hotelMapEl.appendChild(p);
+                    // console.log(responseList[i].photos[0].html_attributions);
+
+                    
+                    var hotelStr = responseList[i].photos[0].html_attributions[0];
+                    // console.log("Checking str looks like String: \n", str); //checks is str is a string
+                    var hotelRes = hotelStr.split('"'); //Splits string by every quotation mark.
+
+                    /* CREATES LINK */
+                    a = document.createElement('a');
+                    a.href = hotelRes[1]; // Insted of calling setAttribute
+                    a.innerHTML = "Hotel Location" // <a>INNER_TEXT</a>
+                    hotelMapEl.appendChild(a);
+                    // console.log(responseList[i].photos[0].html_attributions);
                 };
             };
         });
@@ -144,7 +172,6 @@ var photoSearch = function (value) {
             
             var cityPhotoEl = document.getElementById("cityImage");
             var photoLink = response.photos[0].image.web;
-            console.log(photoLink)
             /* INSERTS PHOTO */
             cityPhotoEl.setAttribute("src", photoLink)
  
