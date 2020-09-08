@@ -1,4 +1,21 @@
+function myFunction() {
 
+    var cityValue = localStorage.getItem("cityValue");
+
+    // for the headers
+    var cityNameElW = document.querySelector(".cityNameElW");
+    cityNameElW.innerHTML = cityValue;
+    var cityNameElH = document.querySelector(".cityNameElH");
+    cityNameElH.innerHTML = cityValue;
+    var cityNameElE = document.querySelector(".cityNameElE");
+    cityNameElE.innerHTML = cityValue;
+    var cityNameElT = document.querySelector("#title");
+    cityNameElT.innerHTML = cityValue + " Travel";
+
+    get5Day(cityValue);
+    cityCoord(cityValue);
+    photoSearch(cityValue);
+}
 
 // Weather Dashboard
 var get5Day = function (value) {
@@ -162,39 +179,42 @@ var hotelSearch = function (value) {
 var photoSearch = function (value) { 
     var cityName = value.toLowerCase();
 
-    console.log(cityName)
+        if (cityName.includes(" ")) {    
+        cityName = cityName.replace(/ /g, "-");
 
-    // // var testApi = "https://api.teleport.org/api/urban_areas/slug:san-diego/images/";
-    // var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ value + "/images/";
+        
+        var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ cityName + "/images/";
 
-    // fetch(photoURL).then(function (response) {
-    //     return response.json();
-    // })
-    //     .then(function (response) {
-            
-    //         var cityPhotoEl = document.getElementById("cityImage");
-    //         var photoLink = response.photos[0].image.web;
-    //         /* INSERTS PHOTO */
-    //         cityPhotoEl.setAttribute("src", photoLink)
+        fetch(photoURL).then(function (response) {
+            return response.json();
+        })
+            .then(function (response) {
+                
+                var cityPhotoEl = document.getElementById("cityImage");
+                var photoLink = response.photos[0].image.web;
+                /* INSERTS PHOTO */
+                cityPhotoEl.setAttribute("src", photoLink)
  
-    //     });
+         });
+
+         console.log(cityName)
+        
+        } else {
+    
+        var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ cityName + "/images/";
+
+        fetch(photoURL).then(function (response) {
+            return response.json();
+        })
+            .then(function (response) {
+                
+                var cityPhotoEl = document.getElementById("cityImage");
+                var photoLink = response.photos[0].image.web;
+                /* INSERTS PHOTO */
+                cityPhotoEl.setAttribute("src", photoLink)
+ 
+         });
+        }
+     
+    
 };
-
-function myFunction() {
-
-    var cityValue = localStorage.getItem("cityValue");
-
-    // for the headers
-    var cityNameElW = document.querySelector(".cityNameElW");
-    cityNameElW.innerHTML = cityValue;
-    var cityNameElH = document.querySelector(".cityNameElH");
-    cityNameElH.innerHTML = cityValue;
-    var cityNameElE = document.querySelector(".cityNameElE");
-    cityNameElE.innerHTML = cityValue;
-    var cityNameElT = document.querySelector("#title");
-    cityNameElT.innerHTML = cityValue + " Travel";
-
-    get5Day(cityValue);
-    cityCoord(cityValue);
-    photoSearch(cityValue);
-}
