@@ -99,7 +99,7 @@ var hotelSearch = function (value) {
         return response.json();
     })
         .then(function (response) {
-            console.log(response)
+            // console.log(response)
             /* SORTING RESPONSE BY RATING FROM WORST TO BEST z*/
             var responseList = response.results.sort(function (a, b) {
                 var hotelList = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;
