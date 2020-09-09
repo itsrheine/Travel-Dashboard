@@ -29,7 +29,7 @@ var get5Day = function (value) {
         // request was successful
         if (response.ok) {
             response.json().then(function (data) {
-
+                console.log(data);
                 for (var i = 1; i < 6; i++) {
 
                     // variables - 5 day forecast
@@ -114,7 +114,7 @@ var hotelSearch = function (value) {
                 var hotelAddressEl = document.getElementById("hotel-address" + i);
                 var hotelRatingEl = document.getElementById("hotel-rating" + i);
                 var hotelMapEl = document.getElementById("hotel-map" + i);
-               
+
 
                 var hotelName = responseList[i].name;
                 hotelNameEl.innerText = hotelName;
@@ -127,10 +127,10 @@ var hotelSearch = function (value) {
 
                 if (responseList[i].photos === undefined) { //if there is no hotel map link it just display business status.
                     var businessStatus = responseList[i].business_status;
-                    
+
                     function titleCase(string) { //changes string into proper casing.
                         businessStatus = string.toLowerCase().split("_"); //gets rid of underscore for Temporarily_closed
-                        for(var i = 0; i< businessStatus.length; i++){
+                        for (var i = 0; i < businessStatus.length; i++) {
                             businessStatus[i] = businessStatus[i][0].toUpperCase() + businessStatus[i].slice(1);
                         }
                         businessStatus.join(" ");
@@ -142,13 +142,13 @@ var hotelSearch = function (value) {
                     p = document.createElement('p');
                     p.innerHTML = "Status: " + businessStatus // <a>INNER_TEXT</a>
                     hotelMapEl.appendChild(p);
-                    
+
                 } else {
                     var businessStatus = responseList[i].business_status;
 
                     function titleCase(string) {
                         businessStatus = string.toLowerCase().split("_");
-                        for(var i = 0; i< businessStatus.length; i++){
+                        for (var i = 0; i < businessStatus.length; i++) {
                             businessStatus[i] = businessStatus[i][0].toUpperCase() + businessStatus[i].slice(1);
                         }
                         businessStatus.join(" ");
@@ -160,9 +160,9 @@ var hotelSearch = function (value) {
                     p = document.createElement('p');
                     p.innerHTML = "Status: " + businessStatus // <a>INNER_TEXT</a>
                     hotelMapEl.appendChild(p);
-                    
 
-                    
+
+
                     var hotelStr = responseList[i].photos[0].html_attributions[0];
                     // console.log("Checking str looks like String: \n", str); //checks is str is a string
                     var hotelRes = hotelStr.split('"'); //Splits string by every quotation mark.
@@ -172,33 +172,32 @@ var hotelSearch = function (value) {
                     a.href = hotelRes[1]; // Insted of calling setAttribute
                     a.innerHTML = "Hotel Location" // <a>INNER_TEXT</a>
                     hotelMapEl.appendChild(a);
-                   
+
                 };
             };
         });
 };
 
 
-var photoSearch = function (value) { 
+var photoSearch = function (value) {
     var cityName = value.toLowerCase();
 
 
-        if (cityName === "san francisco") { //fixes san francisco bug.
-            cityName = cityName.replace(/san francisco/g, "san-francisco-bay-area");
+    if (cityName === "san francisco") { //fixes san francisco bug.
+        cityName = cityName.replace(/san francisco/g, "san-francisco-bay-area");
 
-            
-            var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ cityName + "/images/";
+        var photoURL = "https://api.teleport.org/api/urban_areas/slug:" + cityName + "/images/";
 
-            fetch(photoURL).then(function (response) {
-                return response.json();
-            })
-                .then(function (response) {
-                    
-                    var cityPhotoEl = document.getElementById("cityImage");
-                    var photoLink = response.photos[0].image.web;
-                    /* INSERTS PHOTO */
-                    cityPhotoEl.setAttribute("src", photoLink)
-    
+        fetch(photoURL).then(function (response) {
+            return response.json();
+        })
+            .then(function (response) {
+
+                var cityPhotoEl = document.getElementById("cityImage");
+                var photoLink = response.photos[0].image.web;
+                /* INSERTS PHOTO */
+                cityPhotoEl.setAttribute("src", photoLink)
+
             });
 
 
@@ -223,39 +222,47 @@ var photoSearch = function (value) {
         }else if(cityName.includes(" ")) {    //spaces are converted to dashes. 
             cityName = cityName.replace(/ /g, "-");
 
-            
-            var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ cityName + "/images/";
 
-            fetch(photoURL).then(function (response) {
-                return response.json();
-            })
-                .then(function (response) {
-                    
-                    var cityPhotoEl = document.getElementById("cityImage");
-                    var photoLink = response.photos[0].image.web;
-                    /* INSERTS PHOTO */
-                    cityPhotoEl.setAttribute("src", photoLink)
-    
+        var photoURL = "https://api.teleport.org/api/urban_areas/slug:" + cityName + "/images/";
+
+        fetch(photoURL).then(function (response) {
+
+            return response.json();
+        })
+            .then(function (response) {
+
+                var cityPhotoEl = document.getElementById("cityImage");
+                var photoLink = response.photos[0].image.web;
+                /* INSERTS PHOTO */
+                cityPhotoEl.setAttribute("src", photoLink)
+
             });
+
+
+    } else { //just push through with lowercased cityName.
+
+        var photoURL = "https://api.teleport.org/api/urban_areas/slug:" + cityName + "/images/";
+
+        fetch(photoURL).then(function (response) {
+            return response.json();
+        })
+            .then(function (response) {
+
+                var cityPhotoEl = document.getElementById("cityImage");
+                var photoLink = response.photos[0].image.web;
+                /* INSERTS PHOTO */
+                cityPhotoEl.setAttribute("src", photoLink)
+
+            }).catch(err => {
+                console.log(err);
+                var cityPhotoEl = document.getElementById("cityImage");
+                /* INSERTS PHOTO */
+                cityPhotoEl.setAttribute("src",'./assets/images/plane.jpg')
+                
+            })
         
-        } else { //just push through with lowercased cityName.
-    
-            var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ cityName + "/images/";
-
-            fetch(photoURL).then(function (response) {
-                return response.json();
-            })
-                .then(function (response) {
-                    
-                    var cityPhotoEl = document.getElementById("cityImage");
-                    var photoLink = response.photos[0].image.web;
-                    /* INSERTS PHOTO */
-                    cityPhotoEl.setAttribute("src", photoLink)
-    
-            });
-        }
-
-    
+    } 
+            
 };
 
 // Restaurant
@@ -263,7 +270,7 @@ var cityFood = function (value) {
     var corsInput = "https://cors-anywhere.herokuapp.com/" //Fixes "cors" error.
     var resturantApi = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + value + "&radius=5000&type=restaurant&keyword=restaurant&key=AIzaSyD3fr4ELXNC6kKlSBcVbjNyU_NxjXiK0p0";
     var foodUrl = corsInput + resturantApi;
-    
+
 
     fetch(foodUrl).then(function (response) {
         return response.json();
@@ -291,7 +298,7 @@ var cityFood = function (value) {
                 //add rating
                 var resturantRating = responseList[i].rating;
                 resturantRatingEl.innerHTML = resturantRating + "&#9733" + " rating";
-                
+
                 if (responseList[i].photos === undefined) {
                     var businessStatus = responseList[i].business_status;
 
@@ -324,17 +331,17 @@ var cityFood = function (value) {
 
                     //find out if the store open or close
                     p = document.createElement('p');
-                    p.innerHTML = "Status: " + businessStatus 
+                    p.innerHTML = "Status: " + businessStatus
                     resturantMapEl.appendChild(p);
 
 
                     var resturantStr = responseList[i].photos[0].html_attributions[0];
-                    var resturantRes = resturantStr.split('"'); 
+                    var resturantRes = resturantStr.split('"');
 
                     //add map location 
                     a = document.createElement('a');
                     a.href = resturantRes[1];
-                    a.innerHTML = "Restaurant Location" 
+                    a.innerHTML = "Restaurant Location"
                     resturantMapEl.appendChild(a);
 
                 };
@@ -346,7 +353,7 @@ var cityFood = function (value) {
 
 // Modal
 function formSubmitHandler() {
-    
+
     var inputValue = document.getElementById("inputValue").value;
     localStorage.setItem("cityValue", inputValue);
 
