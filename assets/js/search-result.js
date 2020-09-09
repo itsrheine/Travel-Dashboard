@@ -46,7 +46,13 @@ var get5Day = function (value) {
                     tempEl.innerHTML = temperatureFarhenheit;
 
                     var iconVal = data.list[i].weather[0].icon; // this is the code
-                    iconEl.setAttribute("src", "https://openweathermap.org/img/w/" + iconVal + ".png");
+
+                    if (iconVal === "50n" || iconVal === "50d") {
+                        iconEl.classList.add("height: 64, width: 64");
+                    }
+                    else {
+                        iconEl.setAttribute("src", "./assets/images/icons/" + iconVal + ".svg");
+                    }
 
                 }
             })
@@ -231,7 +237,7 @@ var photoSearch = function (value) {
         }
      console.log(cityName)
     
-};dd
+};
 
 // Restaurant
 
