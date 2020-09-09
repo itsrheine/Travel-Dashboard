@@ -38,8 +38,8 @@ var cityWeather = function(value) {
                 var iconEl = document.querySelector("#icon" + i);
 
                 // equation variables
-                var date = moment().add.(i, 'days').format('l');
-                dateEl.innerHTML = date;
+                // var date = moment().add.(i, 'days').format('l');
+                // dateEl.innerHTML = date;
 
                 var temperatureValue = data.list[i].main.temp;
                 var fixTemp = temperatureValue.toFixed(1);
