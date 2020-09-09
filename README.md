@@ -1,5 +1,3 @@
-![Travel Logo](.assets/images/Travel.png)
-
 # Travel Dashboard
 Plan your trips with ease and peace of mind. Search a city to travel to and have an overview of how the city's weather forecast in the next 5-days will look like. See the top rated places to eat and stay. Be a travel expert with this travel dashboard. 
 
@@ -16,12 +14,14 @@ Plan your trips with ease and peace of mind. Search a city to travel to and have
 ## Created using
 * HTML
 * CSS
-* JS
+* JavaScript
+* Bootstrap v4.3.1
 
 ## API used
 * https://developers.google.com/places/web-service/search
 * https://api.teleport.org/api/urban_areas
-* Link
+* https://openweathermap.org/forecast16
+* https://openweathermap.org/weather
 
 ## Link to Website
 https://itsrheine.github.io/Travel-Dashboard/
@@ -30,7 +30,23 @@ https://itsrheine.github.io/Travel-Dashboard/
 https://github.com/itsrheine/Travel-Dashboard
 
 ## Contribution
-Created by David Joaquin (daejo), Mahmoud Abdulrhman (MahmoudAbdulrhman) and Marrione Nguyen (itsrheine)
+Created by: 
+* David Joaquin ([daejo](https://github.com/daejo)) 
+    * Hotel search API function.
+    * City image search API function.
+    * Images for logo, and subheadlines.
+    * ReadMe documentation.
+* Mahmoud Abdulrhman ([MahmoudAbdulrhman](https://github.com/MahmoudAbdulrhman)) 
+    * Restaurant search API function.
+    * Mobile responsiveness.
+    * Placeholder city stock photo. 
+* Marrione Nguyen ([itsrheine](https://github.com/itsrheine)) 
+    * Weather API function.
+    * Event listener search function.
+    * Modal functionality.
+    * Load and save function.
+    * Linking and compiling codes.
+
 
 ## Screenshot
 ![Screenshot](Path Here)
