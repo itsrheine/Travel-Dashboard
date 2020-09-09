@@ -92,7 +92,7 @@ var cityCoord = function (data) {
 var hotelSearch = function (value) {
 
     var corsInput = "https://cors-anywhere.herokuapp.com/" //Fixes "cors" error.
-    var hotelApi = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + value + "&radius=1500&type=hotel&keyword=hotel&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc";
+    var hotelApi = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + value + "&radius=2500&type=hotel&keyword=hotel&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc";
     var hotelUrl = corsInput + hotelApi;
 
     fetch(hotelUrl).then(function (response) {
@@ -242,7 +242,7 @@ var photoSearch = function (value) {
 // Restaurant
 var cityFood = function (value) {
     var corsInput = "https://cors-anywhere.herokuapp.com/" //Fixes "cors" error.
-    var resturantApi = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + value + "&radius=1500&type=restaurant&keyword=restaurant&key=AIzaSyD3fr4ELXNC6kKlSBcVbjNyU_NxjXiK0p0";
+    var resturantApi = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + value + "&radius=2500&type=restaurant&keyword=restaurant&key=AIzaSyD3fr4ELXNC6kKlSBcVbjNyU_NxjXiK0p0";
     var foodUrl = corsInput + resturantApi;
     
 
