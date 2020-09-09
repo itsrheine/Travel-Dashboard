@@ -4,13 +4,13 @@ function myFunction() {
 
     // for the headers
     var cityNameElW = document.querySelector(".cityNameElW");
-    cityNameElW.innerHTML = cityValue;
+    cityNameElW.innerHTML = cityValue.toUpperCase();
     var cityNameElH = document.querySelector(".cityNameElH");
-    cityNameElH.innerHTML = cityValue;
+    cityNameElH.innerHTML = cityValue.toUpperCase();
     var cityNameElE = document.querySelector(".cityNameElE");
-    cityNameElE.innerHTML = cityValue;
+    cityNameElE.innerHTML = cityValue.toUpperCase();
     var cityNameElT = document.querySelector("#title");
-    cityNameElT.innerHTML = cityValue + " Travel";
+    cityNameElT.innerHTML = cityValue.toUpperCase() + " TRAVEL";
 
     get5Day(cityValue);
     cityCoord(cityValue);
