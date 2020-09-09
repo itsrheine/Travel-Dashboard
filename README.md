@@ -12,10 +12,12 @@ Plan your trips with ease and peace of mind. Search a city to travel to and have
     * A modal where I can input a different city to search for will pop up and you can do the process over again.
 
 ## Created using
-* HTML
-* CSS
-* JavaScript
+* HTML v5
+* CSS v3
+* JavaScript v1.8.5
 * Bootstrap v4.3.1
+* amCharts icons
+* Nouvelle Vague by Dirk Schuster
 
 ## API used
 * https://developers.google.com/places/web-service/search
