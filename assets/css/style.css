@@ -12,10 +12,10 @@ body{
     font-family;
 } */
 
-.row{
+/* .row{
     border: 2px solid blue;
     background-color: black;
-}
+} */
 
 col{
     border: 2px solid yellow;
@@ -37,4 +37,17 @@ div .logo {
 div input {
     width: 70%;
     height: 30px;
+}
+
+.col {
+    margin: 10px;
+    padding: 10px;
+}
+
+.bg-black {
+    background: black;
+}
+
+.resturantlink-p a:link, .resturantlink-p a:visited {
+    color:white;
 }
