@@ -99,7 +99,7 @@ var hotelSearch = function (value) {
         return response.json();
     })
         .then(function (response) {
-            // console.log(response)
+            console.log(response)
             /* SORTING RESPONSE BY RATING FROM WORST TO BEST z*/
             var responseList = response.results.sort(function (a, b) {
                 var hotelList = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;
@@ -109,7 +109,7 @@ var hotelSearch = function (value) {
             /* CYCLE THROUGH FROM END OF ARRAY (counts down from 20 to 15) */
             for (var i = responseList.length - 1; i >= 15; i--) {
                 // LINKS VARIABLES TO DOCUMENT ELEMENTS //
-                
+                // console.log(responseList)
                 var hotelNameEl = document.getElementById("hotel-name" + i);
                 var hotelAddressEl = document.getElementById("hotel-address" + i);
                 var hotelRatingEl = document.getElementById("hotel-rating" + i);
@@ -201,8 +201,26 @@ var photoSearch = function (value) {
             });
 
 
-    } else if (cityName.includes(" ")) {    //spaces are converted to dashes. 
-        cityName = cityName.replace(/ /g, "-");
+        }else if(cityName === "portland") {    //spaces are converted to dashes. 
+            cityName = cityName.replace(/portland/g, "portland-or");
+
+            
+            var photoURL = "https://api.teleport.org/api/urban_areas/slug:"+ cityName + "/images/";
+
+            fetch(photoURL).then(function (response) {
+                return response.json();
+            })
+                .then(function (response) {
+                    
+                    var cityPhotoEl = document.getElementById("cityImage");
+                    var photoLink = response.photos[0].image.web;
+                    /* INSERTS PHOTO */
+                    cityPhotoEl.setAttribute("src", photoLink)
+    
+            });
+        
+        }else if(cityName.includes(" ")) {    //spaces are converted to dashes. 
+            cityName = cityName.replace(/ /g, "-");
 
 
         var photoURL = "https://api.teleport.org/api/urban_areas/slug:" + cityName + "/images/";
