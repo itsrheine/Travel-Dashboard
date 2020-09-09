@@ -31,15 +31,16 @@ https://github.com/itsrheine/Travel-Dashboard
 
 ## Contribution
 Created by: 
-* David Joaquin (@daejo), 
+* David Joaquin @daejo 
     * Hotel search API function.
     * City image search API function.
     * Images for logo, and subheadlines.
     * ReadMe documentation.
-* Mahmoud Abdulrhman (@MahmoudAbdulrhman)
+* Mahmoud Abdulrhman @MahmoudAbdulrhman
     * Restaurant search API function.
     * Mobile responsiveness.
-* Marrione Nguyen (@itsrheine)
+    * Placeholder city stock photo. 
+* Marrione Nguyen @itsrheine
     * Weather API function.
     * Event listener search function.
     * Modal functionality.
