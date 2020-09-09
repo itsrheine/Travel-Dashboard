@@ -92,14 +92,14 @@ var cityCoord = function (data) {
 var hotelSearch = function (value) {
 
     var corsInput = "https://cors-anywhere.herokuapp.com/" //Fixes "cors" error.
-    var hotelApi = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + value + "&radius=1500&type=hotel&keyword=hotel&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc";
+    var hotelApi = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + value + "&radius=10000&type=hotel&keyword=hotel&key=AIzaSyA8cerxaXUNfNgMNLFXuh4NPEkM5i7mLXc";
     var hotelUrl = corsInput + hotelApi;
-
+    
     fetch(hotelUrl).then(function (response) {
         return response.json();
     })
         .then(function (response) {
-console.log(response);
+            // console.log(response)
             /* SORTING RESPONSE BY RATING FROM WORST TO BEST z*/
             var responseList = response.results.sort(function (a, b) {
                 var hotelList = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;
@@ -109,6 +109,7 @@ console.log(response);
             /* CYCLE THROUGH FROM END OF ARRAY (counts down from 20 to 15) */
             for (var i = responseList.length - 1; i >= 15; i--) {
                 // LINKS VARIABLES TO DOCUMENT ELEMENTS //
+                
                 var hotelNameEl = document.getElementById("hotel-name" + i);
                 var hotelAddressEl = document.getElementById("hotel-address" + i);
                 var hotelRatingEl = document.getElementById("hotel-rating" + i);
@@ -234,8 +235,14 @@ var photoSearch = function (value) {
                 /* INSERTS PHOTO */
                 cityPhotoEl.setAttribute("src", photoLink)
 
+            }).catch(err => {
+                console.log(err);
+                var cityPhotoEl = document.getElementById("cityImage");
+                /* INSERTS PHOTO */
+                cityPhotoEl.setAttribute("src",'./assets/images/plane.jpg')
+                
             })
-        })
+        
     } 
             
 };
@@ -243,7 +250,7 @@ var photoSearch = function (value) {
 // Restaurant
 var cityFood = function (value) {
     var corsInput = "https://cors-anywhere.herokuapp.com/" //Fixes "cors" error.
-    var resturantApi = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + value + "&radius=1500&type=restaurant&keyword=restaurant&key=AIzaSyD3fr4ELXNC6kKlSBcVbjNyU_NxjXiK0p0";
+    var resturantApi = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + value + "&radius=5000&type=restaurant&keyword=restaurant&key=AIzaSyD3fr4ELXNC6kKlSBcVbjNyU_NxjXiK0p0";
     var foodUrl = corsInput + resturantApi;
 
 
@@ -251,7 +258,7 @@ var cityFood = function (value) {
         return response.json();
     })
         .then(function (response) {
-
+            // console.log(response)
             /* SORTING RESPONSE BY RATING */
             var responseList = response.results.sort(function (a, b) {
                 var resturantList = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;

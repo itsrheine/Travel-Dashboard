@@ -1,5 +1,5 @@
 # Travel Dashboard
-Plan your trips with ease and peace of mind. Search a city to travel to and have an overview of how the city's weather forecast in the next 5-days will look like. See the top rated places to eat and stay. Be a travel expert with this travel dashboard. 
+Plan your trips with ease and peace of mind. Search a metropolitan city to travel to and have an overview of what the city's weather forecast in the next 5-days. See the top 5 rated places to eat and stay. Be a travel expert with this travel dashboard. 
 
 ## Functionality
 1. After typing in my city and searching
@@ -12,14 +12,16 @@ Plan your trips with ease and peace of mind. Search a city to travel to and have
     * A modal where I can input a different city to search for will pop up and you can do the process over again.
 
 ## Created using
-* HTML
-* CSS
-* JavaScript
+* HTML v5
+* CSS v3
+* JavaScript v1.8.5
 * Bootstrap v4.3.1
+* [amCharts icons](https://www.amcharts.com/free-animated-svg-weather-icons/)
+* [Nouvelle Vague by Dirk Schuster](https://www.dafont.com/nouvelle-vague.font)
 
 ## API used
 * https://developers.google.com/places/web-service/search
-* https://api.teleport.org/api/urban_areas
+* https://developers.teleport.org/api/
 * https://openweathermap.org/forecast16
 * https://openweathermap.org/weather
 
