@@ -35,6 +35,10 @@ button a {
     width: 50%;
 }
 
+/* .row{
+    border: 2px solid blue;
+    background-color: black;
+} */
 /* Style the search box inside the navigation bar */
 .topsearch input[type=text] {
     float: right;
@@ -139,6 +143,9 @@ div input {
     background: black;
 }
 
+.resturantlink-p a:link, .resturantlink-p a:visited {
+    color:white;
+}
 .hotellink-p a:link, .hotellink-p a:visited {
     color:white;
 }
