@@ -1,37 +1,132 @@
-*{
-    padding: 0;
-    margin: 0;
+/* Style the top navigation bar */
+.topblock {
+    overflow: hidden;
+    background-color: black;
+    display: block;
+    padding: 35px 30px;
 }
 
-/* @font-face {
-    font-family:"nouvelle";
-    src: url(./nouvelle.ttf);
+.topmidblock {
+    display: block;
+    color: white;
+    border: 13px solid white;
+    border-radius: 12px;
+    width: 100%;
 }
 
-body{
-    font-family;
-} */
+button a {
+  text-decoration: none;
+  text-align: right;
+}
+
+#logoSmall{
+    width: 60%;
+}
+
+#magnifySmall {
+    width: 25%;
+    float: right;
+}
+
+#logoModal {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 
 /* .row{
     border: 2px solid blue;
     background-color: black;
 } */
-
-col{
-    border: 2px solid yellow;
-    background-color: yellow;
+/* Style the search box inside the navigation bar */
+.topsearch input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
 }
+
+#submit {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* city image placeholder*/
+.cityImage {
+    background-color: black;
+    display: block;
+    padding: 20px;
+    margin: 10px 180px;
+}
+
+#hotelTitle, #restaurantTitle, #weatherTitle {
+    color: black;
+}
+
+#cityImage {
+    max-width: 100%;
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
+
+.heading {
+    margin: 13px 0 0 0;
+    padding: 5px;
+}
+
+div .logo {
+    font-size: 150px;
+}
+
+div .logo {
+    font-size: 150px;
+
+}
+
+div .logo {
+    font-size: 150px;
+
+}
+
+.col {
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Row */
+.row {
+    color: white;
+}
+
+@font-face {
+    font-family: 'Nouvelle Vague';
+    src: url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.eot');
+    src: url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.eot?#iefix') format('embedded-opentype'),
+        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.woff2') format('woff2'),
+        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.woff') format('woff'),
+        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.ttf') format('truetype'),
+        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.svg#NouvelleVague-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+.cityName {
+    font: 'Nouvelle Vague';
+    color: black;
+}
+
 .front-page-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 200px;
-}
-
-
-div .logo {
-    font-size: 150px;
 }
 
 div input {
@@ -50,4 +145,45 @@ div input {
 
 .resturantlink-p a:link, .resturantlink-p a:visited {
     color:white;
+}
+.hotellink-p a:link, .hotellink-p a:visited {
+    color:white;
+}
+
+/* Modal CSS */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,52 @@
        <!-- Compressed CSS -->
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="title">Travel</title>
+<!-- 
+  Bootstrap Links -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Modal Link -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-<body>
-    <header class="city-name">
-        <h2>city</h2>
-        <img src="" alt="">icon
-        <h2>travel</h2>
+
+<body onload="myFunction()">
+
+
+
+  <div class="topblock">
+    <div class="topmidblock"></div>
+  </div>
+
+  <div class="row heading">
+    <div class="col col1">
+
+    </div>
+    <div class="col col2">
+
+    </div>
+    <div class="col col3">
+      <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button>
+    </div>
+    <div class="col col4">
+      <img src="./assets/images/Travel.svg" id="logoSmall" />
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+
+      <!-- Modal Header -->
+      <header class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
       </header>
       <span class="date">
       </span>
@@ -83,5 +124,138 @@
       </section>
      
       <script src="./assets/js/script.js"></script>
+
+      <!-- Modal Container -->
+      <div class="w3-container topsearch">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <img src="./assets/images/Travel.svg" class="logo" id="logoModal"/>
+        <form action="./search-result.html">
+          <input type="text" id="inputValue" placeholder="Enter your destination">
+          <button type="submit" onclick="formSubmitHandler()" id="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- City Image -->
+  <div class="container bg-white">
+    <div class="row">
+      <div class="col1">
+      <img class="cityImage" id="cityImage">
+    </div>
+  </div>
+
+  <!-- City Weather -->
+  <div class="container bg-white">
+    <div class="row">
+      <h3 id="weatherTitle">
+        <span class="cityNameElW"></span><img src="assets/images/Weather.svg">
+      </h3>
+    </div>
+    <div class="row">
+      <div class="card text-white bg-dark mb-3 col col1 text-center" style="max-width: 18rem;">
+        <div class="card-header text-warning"><span id="day1"></span></div>
+        <div class="card-body">
+          <p><img id="Icon1"></span></p>
+          <p class="card-text text-white-50"><span id="temp1"></span></p>
+        </div>
+      </div>
+      <div class="card text-white bg-dark mb-3 col col2 text-center" style="max-width: 18rem;">
+        <div id="day2" class="card-header text-warning"></div>
+        <div class="card-body">
+          <p><img id="Icon2"></span></p>
+          <p id="temp2" class="card-text text-white-50"></p>
+        </div>
+      </div>
+      <div class="card text-white bg-dark mb-3 col col3 text-center" style="max-width: 18rem;">
+        <div id="day3" class="card-header text-warning"></div>
+        <div class="card-body">
+          <p><img id="Icon3"></span></p>
+          <p id="temp3" class="card-text text-white-50"></p>
+        </div>
+      </div>
+      <div class="card text-white bg-dark mb-3 col col4 text-center" style="max-width: 18rem;">
+        <div id="day4" class="card-header text-warning"></div>
+        <div class="card-body">
+          <p><img id="Icon4"></span></p>
+          <p id="temp4" class="card-text text-white-50"></p>
+        </div>
+      </div>
+      <div class="card text-white bg-dark mb-3 col col5 text-center" style="max-width: 18rem;">
+        <div id="day5" class="card-header text-warning"></div>
+        <div class="card-body">
+          <p><img id="Icon5"></span></p>
+          <p id="temp5" class="card-text text-white-50"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- City Stays -->
+  <div class="container bg-white">
+    <div class="row">
+      <h3 id="hotelTitle">
+        <span class="cityNameElH"></span><img src="assets/images/Stays.svg">
+      </h3>
+    </div>
+    <div class="row">
+      <div class="card text-white bg-dark mb-3 col col1" style="max-width: 18rem;">
+        <div id="hotel-rating19" class="card-header text-warning"></div>
+        <div class="card-body">
+          <h5 id="hotel-name19" class="card-title"></h5>
+          <p id="hotel-address19" class="card-text text-white-50"></p>
+          <p id="hotel-map19" class="card-text"></p>
+        </div>
+      </div>
+
+      <div class="card text-white bg-dark mb-3 col col2" style="max-width: 18rem;">
+        <div id="hotel-rating18" class="card-header text-warning"></div>
+        <div class="card-body">
+          <h5 id="hotel-name18" class="card-title"></h5>
+          <p id="hotel-address18" class="card-text text-white-50"></p>
+          <p id="hotel-map18" class="card-text"></p>
+        </div>
+      </div>
+
+      <div class="card text-white bg-dark mb-3 col col3" style="max-width: 18rem;">
+        <div id="hotel-rating17" class="card-header text-warning"></div>
+        <div class="card-body">
+          <h5 id="hotel-name17" class="card-title"></h5>
+          <p id="hotel-address17" class="card-text text-white-50"></p>
+          <p id="hotel-map17" class="card-text"></p>
+        </div>
+      </div>
+
+      <div class="card text-white bg-dark mb-3 col col4" style="max-width: 18rem;">
+        <div id="hotel-rating16" class="card-header text-warning"></div>
+        <div class="card-body">
+          <h5 id="hotel-name16" class="card-title"></h5>
+          <p id="hotel-address16" class="card-text text-white-50"></p>
+          <p id="hotel-map16" class="card-text"></p>
+        </div>
+      </div>
+
+      <div class="card text-white bg-dark mb-3 col col5" style="max-width: 18rem;">
+        <div id="hotel-rating15" class="card-header text-warning"></div>
+        <div class="card-body">
+          <h5 id="hotel-name15" class="card-title"></h5>
+          <p id="hotel-address15" class="card-text text-white-50"></p>
+          <p id="hotel-map15" class="card-text"></p>
+        </div>
+      </div>
+
+      <!-- City Eats -->
+      <div class="container bg-white">
+        <div class="row">
+          <h3 id="restaurantTitle">
+            <span class="cityNameElE"></span><img src="assets/images/Eats.svg">
+          </h3>
+        </div>
+      </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+      <script src="./assets/js/search-result.js"></script>
 </body>
+
 </html>
