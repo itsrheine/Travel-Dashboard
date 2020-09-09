@@ -16,12 +16,12 @@ Plan your trips with ease and peace of mind. Search a city to travel to and have
 * CSS v3
 * JavaScript v1.8.5
 * Bootstrap v4.3.1
-* amCharts icons
-* Nouvelle Vague by Dirk Schuster
+* [amCharts icons](https://www.amcharts.com/free-animated-svg-weather-icons/)
+* [Nouvelle Vague by Dirk Schuster](https://www.dafont.com/nouvelle-vague.font)
 
 ## API used
 * https://developers.google.com/places/web-service/search
-* https://api.teleport.org/api/urban_areas
+* https://developers.teleport.org/api/
 * https://openweathermap.org/forecast16
 * https://openweathermap.org/weather
 
