@@ -5,10 +5,6 @@ function myFunction() {
     // for the headers
     var cityNameElW = document.querySelector(".cityNameElW");
     cityNameElW.innerHTML = cityValue.toUpperCase();
-    var cityNameElH = document.querySelector(".cityNameElH");
-    cityNameElH.innerHTML = cityValue.toUpperCase();
-    var cityNameElE = document.querySelector(".cityNameElE");
-    cityNameElE.innerHTML = cityValue.toUpperCase();
     var cityNameElT = document.querySelector("#title");
     cityNameElT.innerHTML = cityValue.toUpperCase() + " TRAVEL";
     var mainCityEl = document.querySelector(".mainName");
