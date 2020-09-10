@@ -234,9 +234,7 @@ var photoSearch = function (value) {
                     cityPhotoEl.setAttribute("src", photoLink)
     
             });
-        }
-
-    
+        } 
 };
 
 // Restaurant
