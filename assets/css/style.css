@@ -1,3 +1,8 @@
+/* FRONT PAGE CSS*/
+#front-logo {
+    width: 500px;
+}
+
 /* Style the top navigation bar */
 .topblock {
     overflow: hidden;
@@ -79,8 +84,6 @@ div .logo {
     font-size: 150px;
 }
 
-
-
 .col {
     margin: 10px;
     padding: 10px;
@@ -89,19 +92,6 @@ div .logo {
 /* Row */
 .row {
     color: white;
-}
-
-@font-face {
-    font-family: 'Nouvelle Vague';
-    src: url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.eot');
-    src: url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.eot?#iefix') format('embedded-opentype'),
-        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.woff2') format('woff2'),
-        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.woff') format('woff'),
-        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.ttf') format('truetype'),
-        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.svg#NouvelleVague-Black') format('svg');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
 }
 
 .cityName {
@@ -176,4 +166,20 @@ div input {
     text-decoration: none;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+    #front-logo {
+        width: 200px;
+    }
+
+    div input {
+        height: 30px;
+        width: 150px
+    };
+
+    .topblock {
+        width: 200px;
+    }
+};
+
 

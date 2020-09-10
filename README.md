@@ -41,7 +41,7 @@ Created by:
 * Mahmoud Abdulrhman ([MahmoudAbdulrhman](https://github.com/MahmoudAbdulrhman)) 
     * Restaurant search API function.
     * Mobile responsiveness.
-    * Placeholder city stock photo. 
+    * Placeholder city stock photo function. 
 * Marrione Nguyen ([itsrheine](https://github.com/itsrheine)) 
     * Weather API function.
     * Event listener search function.
