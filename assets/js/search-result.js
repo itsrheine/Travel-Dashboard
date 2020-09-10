@@ -5,10 +5,6 @@ function myFunction() {
     // for the headers
     var cityNameElW = document.querySelector(".cityNameElW");
     cityNameElW.innerHTML = cityValue.toUpperCase();
-    var cityNameElH = document.querySelector(".cityNameElH");
-    cityNameElH.innerHTML = cityValue.toUpperCase();
-    var cityNameElE = document.querySelector(".cityNameElE");
-    cityNameElE.innerHTML = cityValue.toUpperCase();
     var cityNameElT = document.querySelector("#title");
     cityNameElT.innerHTML = cityValue.toUpperCase() + " TRAVEL";
 
@@ -244,8 +240,32 @@ var photoSearch = function (value) {
                 cityPhotoEl.setAttribute("src",'./assets/images/plane.jpg')
                 
             });
-        } 
-};
+    
+        } else { //just push through with lowercased cityName.
+
+            var photoURL = "https://api.teleport.org/api/urban_areas/slug:" + cityName + "/images/";
+    
+            fetch(photoURL).then(function (response) {
+                return response.json();
+            })
+                .then(function (response) {
+    
+                    var cityPhotoEl = document.getElementById("cityImage");
+                    var photoLink = response.photos[0].image.web;
+                    /* INSERTS PHOTO */
+                    cityPhotoEl.setAttribute("src", photoLink)
+    
+                }).catch(err => {
+                    console.log(err);
+                    var cityPhotoEl = document.getElementById("cityImage");
+                    /* INSERTS PHOTO */
+                    cityPhotoEl.setAttribute("src",'./assets/images/plane.jpg')
+                    
+                })
+            
+            }    
+}       
+                
 
 // Restaurant
 var cityFood = function (value) {
