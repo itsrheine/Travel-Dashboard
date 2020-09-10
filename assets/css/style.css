@@ -104,7 +104,6 @@ div .logo {
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
 }
-}
 
 .col {
     margin: 10px;
@@ -170,7 +169,7 @@ div .logo {
     }
 
     div form {
-        margin-top: 100px;
+        padding-top: 100px;
         position: absolute;
     }  
 
@@ -179,9 +178,6 @@ div .logo {
         width: 200px
     };
 
-    .topblock {
-        width: 300px;
-    }
 
     div button {
         align-content: center;
@@ -190,51 +186,71 @@ div .logo {
 
 @media only screen and (min-width: 370px) {
     #front-logo {
-        width: 200px;
+        height: 170px;
+        width: 250px;
+        position: absolute;
     }
 
     div input {
         height: 30px;
-        width: 200px
+        width: 200px;
+        margin-top: 15px;
     };
 
-    .topblock {
-        width: 300px;
-    }
 
     div button {
         align-content: center;
+        margin-top: 5px;
     }
 
     div form {
-        margin-top: 100px;
-        position: absolute;
+        padding-top: 105px;
+        position: relative;
     }  
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 601px) {
+
     #front-logo {
+        height: 100px;
         width: 450px;
+        position: absolute;
+    }
+
+    div form {
+        padding-top: 200px;
+        position: relative;
+    }  
+    div input {
+        height: 30px;
+        width: 200px;
+    };
+
+    div button {
+        align-content: center;
+        margin-top: 10px;
+    };
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1000px) {
+    #front-logo {
+        height: 270px;
+        position: absolute;
     }
 
     div input {
         height: 30px;
-        width: 200px
+        width: 350px;
     };
 
-    .topblock {
-        width: 300px;
-    }
-
-    div button {
-        align-content: center;
-    }
-
     div form {
-        margin-top: 100px;
-        position: absolute;
+        padding-top: 0px;
+        position: relative;
     }  
+
 }
 
 
@@ -249,12 +265,9 @@ div .logo {
         width: 250px
     };
 
-    .topblock {
-        width: 300px;
-    }
 
     div form {
-        margin-top: 200px;
+        padding-top: 200px;;
         position: absolute;
     }  
 
