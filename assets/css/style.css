@@ -1,3 +1,8 @@
+/* FRONT PAGE CSS*/
+#front-logo {
+    width: 600px;
+}
+
 /* Style the top navigation bar */
 .topblock {
     overflow: hidden;
@@ -79,8 +84,6 @@ div .logo {
     font-size: 150px;
 }
 
-.i
-
 .col {
     margin: 10px;
     padding: 10px;
@@ -91,39 +94,16 @@ div .logo {
     color: white;
 }
 
-@font-face {
-    font-family: 'Nouvelle Vague';
-    src: url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.eot');
-    src: url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.eot?#iefix') format('embedded-opentype'),
-        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.woff2') format('woff2'),
-        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.woff') format('woff'),
-        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.ttf') format('truetype'),
-        url('https://itsrheine.github.io/Travel-Dashboard/assets/font/NouvelleVague-Black.svg#NouvelleVague-Black') format('svg');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
-
 .cityName {
     font: 'Nouvelle Vague';
     color: black;
 }
 
 .front-page-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 200px;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
 }
-.front-page-container .logo {
-   width: 100%;
-   height: 100%;
-}
-
-div input {
-    width: 70%;
-    height: 30px;
 }
 
 .col {
@@ -177,19 +157,105 @@ div input {
     cursor: pointer;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {...}
+@media only screen and (min-width: 300px) {
+    #front-logo {
+        width: 200px;
+    }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {...}
+    .front-page-container {
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        text-align: center;
+    }
+
+    div form {
+        margin-top: 100px;
+        position: absolute;
+    }  
+
+    div input {
+        height: 30px;
+        width: 200px
+    };
+
+    .topblock {
+        width: 300px;
+    }
+
+    div button {
+        align-content: center;
+    }
+}
+
+@media only screen and (min-width: 370px) {
+    #front-logo {
+        width: 200px;
+    }
+
+    div input {
+        height: 30px;
+        width: 200px
+    };
+
+    .topblock {
+        width: 300px;
+    }
+
+    div button {
+        align-content: center;
+    }
+
+    div form {
+        margin-top: 100px;
+        position: absolute;
+    }  
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {...}
+@media only screen and (min-width: 601px) {
+    #front-logo {
+        width: 450px;
+    }
 
+    div input {
+        height: 30px;
+        width: 200px
+    };
 
+    .topblock {
+        width: 300px;
+    }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {...}
+    div button {
+        align-content: center;
+    }
+
+    div form {
+        margin-top: 100px;
+        position: absolute;
+    }  
+}
+
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {...}
+@media only screen and (min-width: 1200px) {
+    #front-logo {
+        width: 600px;
+    }
+
+    div input {
+        height: 30px;
+        width: 250px
+    };
+
+    .topblock {
+        width: 300px;
+    }
+
+    div form {
+        margin-top: 200px;
+        position: absolute;
+    }  
+
+}

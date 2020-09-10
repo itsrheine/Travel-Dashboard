@@ -7,8 +7,7 @@ function myFunction() {
     cityNameElW.innerHTML = cityValue.toUpperCase();
     var cityNameElT = document.querySelector("#title");
     cityNameElT.innerHTML = cityValue.toUpperCase() + " TRAVEL";
-    var mainCityEl = document.querySelector(".mainName");
-    mainCityEl.innerHTML = cityValue.toUpperCase();
+   
 
     get5Day(cityValue);
     cityCoord(cityValue);
@@ -28,6 +27,7 @@ var get5Day = function (value) {
         if (response.ok) {
             response.json().then(function (data) {
                 // console.log(data);
+                console.log(data);
                 for (var i = 1; i < 6; i++) {
 
                     // variables - 5 day forecast
@@ -286,7 +286,7 @@ var cityFood = function (value) {
         return response.json();
     })
         .then(function (response) {
-            // console.log(response)
+            console.log(response)
             /* SORTING RESPONSE BY RATING */
             var responseList = response.results.sort(function (a, b) {
                 var resturantList = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;
