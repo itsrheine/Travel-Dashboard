@@ -79,15 +79,7 @@ div .logo {
     font-size: 150px;
 }
 
-div .logo {
-    font-size: 150px;
 
-}
-
-div .logo {
-    font-size: 150px;
-
-}
 
 .col {
     margin: 10px;
@@ -123,6 +115,10 @@ div .logo {
     align-items: center;
     flex-direction: column;
     margin: 200px;
+}
+.front-page-container .logo {
+   width: 100%;
+   height: 100%;
 }
 
 div input {
@@ -181,3 +177,63 @@ div input {
     cursor: pointer;
 }
 
+/* small devices (phones, 600px and down) */
+@media only screen and (max-width: 576px) {
+    .front-page-container .logo {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        margin: -18px;
+        margin-top: -79px;
+    }
+     .front-page-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 200px;
+        flex-wrap: wrap;
+    }
+    .front-page-container .form{
+        margin: auto;
+    }
+     
+}
+
+@media only screen and (min-width: 376px) {
+    .front-page-container .logo {
+        width: 90%;
+        height: 100%;
+        margin-left: 5px;
+    }
+     }
+     
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .front-page-container .logo {
+        width: 100%;
+        height: 100%;
+     }
+     
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .front-page-container .logo {
+        width: 100%;
+        height: 100%;
+     }
+     
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .front-page-container .logo {
+        width: 100%;
+        height: 100%;
+     }
+     
+}
