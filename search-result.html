@@ -33,8 +33,8 @@
 
     </div>
     <div class="col col3">
-      <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open
-        Modal</button>
+      <img onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-white" id="modal-btn" src="assets/images/magnifying.svg">Open
+        Modal</img>
     </div>
     <div class="col col4 col-lg col-sm-6 col-12">
       <img src="./assets/images/Travel.svg" id="logoSmall" />
@@ -56,7 +56,8 @@
         <span onclick="document.getElementById('id01').style.display='none'"
           class="w3-button w3-display-topright">&times;</span>
         <img src="./assets/images/Travel.svg" class="logo" id="logoModal"/>
-        <form action="./search-result.html">
+        
+        <form action="./search-result.html" id="modal-form">
           <input type="text" id="inputValue" placeholder="Enter your destination">
           <button type="submit" onclick="formSubmitHandler()" id="submit">Search</button>
         </form>
