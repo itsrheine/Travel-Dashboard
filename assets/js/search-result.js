@@ -29,13 +29,14 @@ var get5Day = function (value) {
         // request was successful
         if (response.ok) {
             response.json().then(function (data) {
-                console.log(data);
+                // console.log(data);
                 for (var i = 1; i < 6; i++) {
 
                     // variables - 5 day forecast
                     var dateEl = document.querySelector("#day" + i);
                     var tempEl = document.querySelector("#temp" + i);
                     var iconEl = document.querySelector("#Icon" + i);
+                    
 
                     // secondary dashboard
                     var date = moment().add(i, 'days').format('l');
@@ -99,7 +100,7 @@ var hotelSearch = function (value) {
         return response.json();
     })
         .then(function (response) {
-            console.log(response)
+            // console.log(response)
             /* SORTING RESPONSE BY RATING FROM WORST TO BEST z*/
             var responseList = response.results.sort(function (a, b) {
                 var hotelList = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;
@@ -243,32 +244,7 @@ var photoSearch = function (value) {
                 cityPhotoEl.setAttribute("src",'./assets/images/plane.jpg')
                 
             });
-
-
-    } else { //just push through with lowercased cityName.
-
-        var photoURL = "https://api.teleport.org/api/urban_areas/slug:" + cityName + "/images/";
-
-        fetch(photoURL).then(function (response) {
-            return response.json();
-        })
-            .then(function (response) {
-
-                var cityPhotoEl = document.getElementById("cityImage");
-                var photoLink = response.photos[0].image.web;
-                /* INSERTS PHOTO */
-                cityPhotoEl.setAttribute("src", photoLink)
-
-            }).catch(err => {
-                console.log(err);
-                var cityPhotoEl = document.getElementById("cityImage");
-                /* INSERTS PHOTO */
-                cityPhotoEl.setAttribute("src",'./assets/images/plane.jpg')
-                
-            })
-        
-    } 
-            
+        } 
 };
 
 // Restaurant
