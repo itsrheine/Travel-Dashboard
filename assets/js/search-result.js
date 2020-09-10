@@ -236,6 +236,12 @@ var photoSearch = function (value) {
                 /* INSERTS PHOTO */
                 cityPhotoEl.setAttribute("src", photoLink)
 
+            }).catch(err => {
+                console.log(err);
+                var cityPhotoEl = document.getElementById("cityImage");
+                /* INSERTS PHOTO */
+                cityPhotoEl.setAttribute("src",'./assets/images/plane.jpg')
+                
             });
 
 
