@@ -11,6 +11,8 @@ function myFunction() {
     cityNameElE.innerHTML = cityValue.toUpperCase();
     var cityNameElT = document.querySelector("#title");
     cityNameElT.innerHTML = cityValue.toUpperCase() + " TRAVEL";
+    var mainCityEl = document.querySelector(".mainName");
+    mainCityEl.innerHTML = cityValue.toUpperCase();
 
     get5Day(cityValue);
     cityCoord(cityValue);
