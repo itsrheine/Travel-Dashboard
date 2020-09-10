@@ -36,7 +36,7 @@ Created by:
 * David Joaquin ([daejo](https://github.com/daejo)) 
     * Hotel search API function.
     * City image search API function.
-    * Images for logo, and subheadlines.
+    * Image and icon assets.
     * ReadMe documentation.
     * Splash page mobile responsiveness
 * Mahmoud Abdulrhman ([MahmoudAbdulrhman](https://github.com/MahmoudAbdulrhman)) 
