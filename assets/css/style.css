@@ -1,7 +1,7 @@
 /* FRONT PAGE CSS*/
-#front-logo {
-    width: 500px;
-}
+/* #front-logo {
+    width: 600px;
+} */
 
 /* Style the top navigation bar */
 .topblock {
@@ -31,29 +31,6 @@ button a {
 #magnifySmall {
     width: 25%;
     float: right;
-}
-
-#logoModal {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
-/* Style the search box inside the navigation bar */
-.topsearch input[type=text] {
-    float: right;
-    padding: 6px;
-    border: none;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 17px;
-}
-
-#submit {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* city image placeholder*/
@@ -100,20 +77,9 @@ div .logo {
 }
 
 .front-page-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 200px;
-}
-.front-page-container .logo {
-   width: 100%;
-   height: 100%;
-}
-
-div input {
-    width: 70%;
-    height: 30px;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
 }
 
 .col {
@@ -167,34 +133,144 @@ div input {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 600px) {
+/* MODAL ELEMENTS */
+#modal-btn {
+    width: 80px;
+    height: 80px;
+}
+
+#logoModal {
+    display: block;
+    margin: 60px auto 0px auto;
+    width: 50%;
+}
+
+.topsearch input[type=text] {
+    padding: 6px;
+    border: black;
+    font-size: 17px;
+    margin: 10px auto 0px auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#submit {
+    margin: 50px auto 50px auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    height: 30px;
+}
+
+@media only screen and (min-width: 300px) {
     #front-logo {
-        width: 200px;
+        width: 250px;
+    }
+
+    .front-page-container {
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        text-align: center;
+    }
+
+    div form {
+        padding-top: 120px;
+        position: absolute;
+    }  
+
+    div input {
+        height: 30px;
+        width: 180px
+    };
+
+
+    form button {
+        align-content: center;
+    }
+}
+
+@media only screen and (min-width: 370px) {
+    #front-logo {
+        width: 300px;
+        position: absolute;
     }
 
     div input {
         height: 30px;
-        width: 150px
+        width: 180px;
+        margin-top: 15px;
     };
 
-    .topblock {
-        width: 200px;
+
+    div button {
+        align-content: center;
+        margin-top: 5px;
     }
-};
 
-
-/* Extra small devices (phones, 600px and down) */
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {...}
+    div form {
+        padding-top: 105px;
+        position: relative;
+    }  
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {...}
+@media only screen and (min-width: 601px) {
 
+    #front-logo {
+        width: 550px;
+        position: absolute;
+    }
 
+    div form {
+        padding-top: 170px;
+        position: relative;
+    }  
+    div input {
+        height: 30px;
+        width: 200px;
+    };
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {...}
+    div button {
+        align-content: center;
+        margin-top: 10px;
+    };
+
+}
+
+@media only screen and (min-width: 1000px) {
+    #front-logo {
+        width: 600px;
+        position: absolute;
+    }
+
+    div input {
+        height: 30px;
+        width: 350px;
+    };
+
+    div form {
+        padding-top: 0px;
+        position: relative;
+    }  
+
+}
+
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {...}
+@media only screen and (min-width: 1200px) {
+    #front-logo {
+        width: 600px;
+    }
+
+    div input {
+        height: 30px;
+        width: 250px
+    };
+
+
+    div form {
+        padding-top: 200px;;
+        position: absolute;
+    }  
+
+}
