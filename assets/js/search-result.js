@@ -36,7 +36,7 @@ var get5Day = function (value) {
                     var dateEl = document.querySelector("#day" + i);
                     var tempEl = document.querySelector("#temp" + i);
                     var iconEl = document.querySelector("#Icon" + i);
-s
+
                     var date = moment().add(i, 'days').format('l');
                     dateEl.innerHTML = date;
                     // console.log("value for x: " + x)
