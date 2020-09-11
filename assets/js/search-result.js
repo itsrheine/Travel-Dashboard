@@ -26,29 +26,31 @@ var get5Day = function (value) {
         // request was successful
         if (response.ok) {
             response.json().then(function (data) {
-                            
+            console.log(data)
 
-                // console.log(data);
-                for (var i = 1; i < 6; i++) {
-                    // variables - 5 day forecast
+                let x = 4;
+                let i = 1;
+
+                while (i < 6) {
+                    
                     var dateEl = document.querySelector("#day" + i);
                     var tempEl = document.querySelector("#temp" + i);
                     var iconEl = document.querySelector("#Icon" + i);
 
                     var date = moment().add(i, 'days').format('l');
                     dateEl.innerHTML = date;
-                }
-
-                for (var x = 3; x < 36; x+=8) {
-                    console.log(x)
+                
+                
+                    console.log("value for x: " + x)
                     
                     var temperatureValue = data.list[x].main.temp;
-                    console.log(temperatureValue);
+                    console.log("temp: " + temperatureFarhenheit);
                     var temperatureFarhenheit = Math.round(((temperatureValue - 273.15) * 1.8) + 32) + "°F";
                     tempEl.innerHTML = temperatureFarhenheit;
 
                     var iconVal = data.list[x].weather[0].icon; // this is the code
-                    console.log(iconVal);
+                    console.log("icon: " + iconVal);
+
                     if (iconVal === "50n" || iconVal === "50d") {
                         iconEl.classList.add("height: 64, width: 64");
                     }
@@ -56,9 +58,10 @@ var get5Day = function (value) {
                         iconEl.setAttribute("src", "./assets/images/icons/" + iconVal + ".svg");
                     }
 
+                    x += 8
+                    i++
                 }
-                
-                
+
             })
         }
     })
