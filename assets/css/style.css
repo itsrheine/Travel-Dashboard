@@ -1,10 +1,7 @@
 /* FRONT PAGE CSS*/
-#front-logo {
+/* #front-logo {
     width: 600px;
-}
-.cityContainer{
-    margin-bottom: 50px;
-}
+} */
 
 /* Style the top navigation bar */
 .topblock {
@@ -37,35 +34,6 @@ button a {
     float: right;
 }
 
-#logoModal {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
-/* Style the search box inside the navigation bar */
-.topsearch input[type=text] {
-    float: right;
-    padding: 6px;
-    border: none;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 17px;
-}
-
-#submit {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-.cityStyle{
-    margin-top: 32px;
-    font-size: 57px;
-    font-weight: bold;
-}
 /* city image placeholder*/
 .cityImage {
     background-color: black;
@@ -114,7 +82,6 @@ div .logo {
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
 }
-
 
 .col {
     margin: 10px;
@@ -167,9 +134,37 @@ div .logo {
     cursor: pointer;
 }
 
+/* MODAL ELEMENTS */
+#modal-btn {
+    width: 80px;
+    height: 80px;
+}
+
+#logoModal {
+    display: block;
+    margin: 60px auto 0px auto;
+    width: 50%;
+}
+
+.topsearch input[type=text] {
+    padding: 6px;
+    border: black;
+    font-size: 17px;
+    margin: 10px auto 0px auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#submit {
+    margin: 50px auto 50px auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    height: 30px;
+}
+
 @media only screen and (min-width: 300px) {
     #front-logo {
-        width: 200px;
+        width: 250px;
     }
 
     .front-page-container {
@@ -180,20 +175,17 @@ div .logo {
     }
 
     div form {
-        margin-top: 100px;
+        padding-top: 120px;
         position: absolute;
     }  
 
     div input {
         height: 30px;
-        width: 200px
+        width: 180px
     };
 
-    .topblock {
-        width: 300px;
-    }
 
-    div button {
+    form button {
         align-content: center;
     }
     .cityStyle {
@@ -209,63 +201,68 @@ div .logo {
 
 @media only screen and (min-width: 370px) {
     #front-logo {
-        width: 200px;
+        width: 300px;
+        position: absolute;
     }
 
     div input {
         height: 30px;
-        width: 200px
+        width: 180px;
+        margin-top: 15px;
     };
 
-    .topblock {
-        width: 300px;
-    }
 
     div button {
         align-content: center;
+        margin-top: 5px;
     }
 
     div form {
-        margin-top: 100px;
-        position: absolute;
-    } 
-    .cityStyle {
-        margin-top: 5px;
-        font-size: 34px;
-        font-weight: bold;
-    }
-    #logoSmall{
-        width: 50%;
-        margin-top: 0px;
-    } 
-    .head{
-        margin-left: 250px;
-    }
+        padding-top: 105px;
+        position: relative;
+    }  
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 601px) {
+
     #front-logo {
-        width: 450px;
+        width: 550px;
+        position: absolute;
+    }
+
+    div form {
+        padding-top: 170px;
+        position: relative;
+    }  
+    div input {
+        height: 30px;
+        width: 200px;
+    };
+
+    div button {
+        align-content: center;
+        margin-top: 10px;
+    };
+
+}
+
+@media only screen and (min-width: 1000px) {
+    #front-logo {
+        width: 600px;
+        position: absolute;
     }
 
     div input {
         height: 30px;
-        width: 200px
+        width: 350px;
     };
 
-    .topblock {
-        width: 300px;
-    }
-
-    div button {
-        align-content: center;
-    }
-
     div form {
-        margin-top: 100px;
-        position: absolute;
+        padding-top: 0px;
+        position: relative;
     }  
+
 }
 
 
@@ -280,12 +277,9 @@ div .logo {
         width: 250px
     };
 
-    .topblock {
-        width: 300px;
-    }
 
     div form {
-        margin-top: 200px;
+        padding-top: 200px;;
         position: absolute;
     }  
 

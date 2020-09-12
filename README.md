@@ -36,18 +36,19 @@ Created by:
 * David Joaquin ([daejo](https://github.com/daejo)) 
     * Hotel search API function.
     * City image search API function.
-    * Images for logo, and subheadlines.
+    * Image and icon assets.
     * ReadMe documentation.
+    * Splash page mobile responsiveness
 * Mahmoud Abdulrhman ([MahmoudAbdulrhman](https://github.com/MahmoudAbdulrhman)) 
     * Restaurant search API function.
-    * Mobile responsiveness.
+    * Header styling and mobile responsiveness.
     * Placeholder city stock photo function. 
 * Marrione Nguyen ([itsrheine](https://github.com/itsrheine)) 
     * Weather API function.
     * Event listener search function.
     * Modal functionality.
     * Load and save function.
-    * Linking and compiling codes.
+    * Search result mobile responsiveness.
 
 
 ## Screenshot
