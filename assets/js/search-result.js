@@ -286,7 +286,7 @@ var cityFood = function (value) {
         return response.json();
     })
         .then(function (response) {
-            console.log(response)
+            
             /* SORTING RESPONSE BY RATING */
             var responseList = response.results.sort(function (a, b) {
                 var resturantList = (a.rating < b.rating) ? -1 : (a.rating > b.rating) ? 1 : 0;

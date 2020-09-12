@@ -2,6 +2,9 @@
 #front-logo {
     width: 600px;
 }
+.cityContainer{
+    margin-bottom: 50px;
+}
 
 /* Style the top navigation bar */
 .topblock {
@@ -25,7 +28,8 @@ button a {
 }
 
 #logoSmall{
-    width: 60%;
+    width: 35%;
+    margin-top: 38px;
 }
 
 #magnifySmall {
@@ -56,6 +60,12 @@ button a {
     margin-right: auto;
 }
 
+
+.cityStyle{
+    margin-top: 32px;
+    font-size: 57px;
+    font-weight: bold;
+}
 /* city image placeholder*/
 .cityImage {
     background-color: black;
@@ -104,7 +114,7 @@ div .logo {
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
 }
-}
+
 
 .col {
     margin: 10px;
@@ -186,6 +196,15 @@ div .logo {
     div button {
         align-content: center;
     }
+    .cityStyle {
+        margin-top: 5px;
+        font-size: 34px;
+        font-weight: bold;
+    }
+    #logoSmall{
+        width: 50%;
+        margin-top: 0px;
+    }
 }
 
 @media only screen and (min-width: 370px) {
@@ -209,7 +228,19 @@ div .logo {
     div form {
         margin-top: 100px;
         position: absolute;
-    }  
+    } 
+    .cityStyle {
+        margin-top: 5px;
+        font-size: 34px;
+        font-weight: bold;
+    }
+    #logoSmall{
+        width: 50%;
+        margin-top: 0px;
+    } 
+    .head{
+        margin-left: 250px;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
