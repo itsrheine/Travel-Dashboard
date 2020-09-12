@@ -284,3 +284,56 @@ div .logo {
     }  
 
 }
+/*Header Media setup*/
+@media only screen and (max-width: 375px){
+    #container-top{
+       text-align: center;
+    }
+    #row-top{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #mag{
+        width: 15%;
+    }
+   
+}
+
+@media only screen and (min-width: 768px){
+    #mag {
+        width: 10%;
+    }
+    #row-top{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+@media (min-width: 576px){
+    #mag {
+        width: 10%;
+    }
+    #row-top{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+@media (max-width: 575px){
+    #container-top{
+        text-align: center;
+     }
+    #mag {
+        width: 15%;
+    }
+    #row-top{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+@media (min-width: 992px){
+    #row-top{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+}

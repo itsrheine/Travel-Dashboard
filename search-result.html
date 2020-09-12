@@ -25,19 +25,19 @@
     <div class="topmidblock"></div>
   </div>
 
-  <div class="row heading d-flex p-2 justify-content-between head">
-    <div class="col col1 col-lg col-sm-6 col-12 ">
-      <h1 id="weatherTitle" class="mx-auto cityStyle" style="width: 200px;">
-        <span class="cityNameElW"></span>
-      </h1>
+  <div class="container  px-0 " id="container-top">
+    <div class="row text-sm-center heading mx-0 px-0 head" id="row-top">
+      <div class=" col-lg-6 col-sm-12 text-sm-center ">
+        <h1 id="weatherTitle" class="cityStyle">
+          <span class="cityNameElW"></span>
+        </h1>
+      </div>
+      <div class="col-lg-6 col-sm-12 text-sm-center text-lg-center" id="logo-cont">
+        <img id="mag" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-white" id="modal-btn"
+          src="assets/images/magnifying.svg"></img> <img src="./assets/images/Travel.svg" id="logoSmall" />
+      </div>
     </div>
-    <div class="col col3">
-      <img onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-white" id="modal-btn" src="assets/images/magnifying.svg">Open
-        Modal</img>
-    </div>
-    <div class="col col4 col-lg col-sm-6 col-12">
-      <img src="./assets/images/Travel.svg" id="logoSmall" />
-    </div>
+  </div>
   </div>
 
   <!-- Modal -->
@@ -54,14 +54,9 @@
       <div class="w3-container topsearch" alt="Responsive image">
         <span onclick="document.getElementById('id01').style.display='none'"
           class="w3-button w3-display-topright">&times;</span>
-<<<<<<< HEAD
         <img src="./assets/images/Travel.svg" class="logo" id="logoModal" />
-        <form action="./search-result.html">
-=======
-        <img src="./assets/images/Travel.svg" class="logo" id="logoModal"/>
-        
+
         <form action="./search-result.html" id="modal-form">
->>>>>>> 85d9def70b90614b7f98dff033096fe056f40e77
           <input type="text" id="inputValue" placeholder="Enter your destination">
           <button type="submit" onclick="formSubmitHandler()" id="submit">Search</button>
         </form>
