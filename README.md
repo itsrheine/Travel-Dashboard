@@ -52,5 +52,7 @@ Created by:
 
 
 ## Screenshot
-![Screenshot](Path Here)
+![Screenshot](assets/images/screenshot/index.JPG)
+![Screenshot](assets/images/screenshot/search-results.jpg)
+
 
