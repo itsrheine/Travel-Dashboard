@@ -43,7 +43,7 @@ var get5Day = function (value) {
                     // console.log("value for x: " + x)
                     
                     var temperatureValue = data.list[x].main.temp;
-                    console.log("temp: " + temperatureFarhenheit);
+                    // console.log("temp: " + temperatureFarhenheit);
                     var temperatureFarhenheit = Math.round(((temperatureValue - 273.15) * 1.8) + 32) + "°F";
                     tempEl.innerHTML = temperatureFarhenheit;
 
